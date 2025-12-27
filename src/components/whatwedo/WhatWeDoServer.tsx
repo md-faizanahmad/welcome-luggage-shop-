@@ -1,68 +1,71 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const WhatWeDoList = [
   {
-    title: "Repairing of luggage",
-    description:
-      "Expert repairs all travel bags, and trolley bags (VIP, Skybags, Samsonite, Wildcraft & more).",
-    src: "/cards_img/card1.png",
+    src: "/services/repairall.png",
+    link: "/services/repairing-of-luggage",
   },
   {
-    title: "Wholesale parts",
-    description: "Quality wheels, handles, runners, covers (plastic & cloth)",
-    src: "/cards_img/card2.png",
+    src: "/services/saleall.png",
+    link: "/services/wholesale-parts",
   },
   {
-    title: "Accessories",
-    description: "Custom covers and accessories for luggage & travel bags",
-    src: "/cards_img/card3.png",
+    src: "/services/customcovers.png",
+    link: "/services/custom-covers",
   },
   {
-    title: "Dress alterations",
-    description:
-      "Dress alterations for men, women, and children — neat stitching at reasonable rates",
-    src: "/cards_img/card3.png",
+    src: "/services/4.png",
+    link: "/services/dress-alterations",
   },
 ];
 
 export default function WhatWeDoServer() {
+  const [loaded, setLoaded] = useState<boolean[]>(new Array(4).fill(false));
+
   return (
-    <section
-      className="bg-gradient-to-br from-blue-400 shadow-2xl to-white mx-auto px-4 sm:px-6 lg:px-8 py-12"
-      aria-labelledby="WhatWeDo-heading"
-    >
-      <h1
-        id="WhatWeDo-heading"
-        className="text-3xl text-black md:text-4xl font-bold  mb-12 text-center bg-clip-text "
-      >
-        What We Do
-      </h1>
-      <div className="grid cursor-pointer grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="bg-gradient-to-br from-blue-50 via-white to-blue-100 mx-auto px-4 sm:px-6 lg:px-12 py-16">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {WhatWeDoList.map((service, index) => (
-          <article
+          <div
             key={index}
-            className="relative bg-white/30 backdrop-blur-md hover:shadow-xl  rounded-xl p-6 group transform  transition-transform border border-transparent hover:border-gradient-to-r hover:from-blue-500 hover:to-purple-500"
-            aria-labelledby={`service-${index}-title`}
+            className="relative group w-full h-52 sm:h-64 lg:h-72 overflow-hidden rounded-xl"
           >
-            <div className="flex justify-center mb-4">
-              <Image
-                src={service.src}
-                alt={`${service.title} icon`}
-                width={58}
-                height={58}
-                className="object-contain transform  group-hover:rotate-0 transition-transform"
-                quality={75}
-                priority={index === 0}
-              />
+            {/* Skeleton Loader */}
+            {!loaded[index] && (
+              <div className="absolute inset-0 animate-pulse bg-gray-200 rounded-xl"></div>
+            )}
+
+            {/* Image */}
+            <Image
+              src={service.src}
+              alt={`Service ${index + 1}`}
+              fill
+              className={`object-contain transition-transform duration-500 ${
+                loaded[index] ? "opacity-100" : "opacity-0"
+              } group-hover:scale-110`}
+              onLoad={() =>
+                setLoaded((prev) => {
+                  const newState = [...prev];
+                  newState[index] = true;
+                  return newState;
+                })
+              }
+            />
+
+            {/* Hover Button */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+              <Link
+                href={service.link}
+                className="px-4 py-2 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-700 transition"
+              >
+                More
+              </Link>
             </div>
-            <h2
-              id={`service-${index}-title`}
-              className="text-xl font-semibold text-gray-800 mb-2 text-center"
-            >
-              {service.title}
-            </h2>
-            <p className="text-gray-600 text-center">{service.description}</p>
-          </article>
+          </div>
         ))}
       </div>
     </section>

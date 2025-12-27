@@ -1,4 +1,5 @@
 import { MapPin, Phone, MessageCircle } from "lucide-react";
+import Link from "next/link";
 // import QRCode from "react-qr-code";
 
 export default function Footer() {
@@ -24,11 +25,15 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone size={20} />
-                  <a href="tel:+9194305836">+91 9430965836</a>
+                  <Link target="_blank" href="tel:+9194305836">
+                    +91 9430965836
+                  </Link>
                 </li>
                 <li className="flex items-center gap-2">
                   <MessageCircle size={20} />
-                  <a href="https://wa.me/9430965836">WhatsApp</a>
+                  <Link target="_blank" href="https://wa.me/9430965836">
+                    WhatsApp
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -40,6 +45,7 @@ export default function Footer() {
                 Google Maps
               </h3>
               <iframe
+                title="Welcome Luggage & Repairing Center Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2961.724167301735!2d85.00585077536883!3d24.79609907797135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f32b30ac38c101%3A0xe819c1eb6ae9ec9a!2sWelcome%20Trolley%20Repairing%20Center!5e1!3m2!1sen!2sin!4v1757327240962!5m2!1sen!2sin"
                 width="400"
                 height="300"

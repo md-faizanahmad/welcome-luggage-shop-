@@ -1,0 +1,22 @@
+{
+  "name": "Welcome Luggage Repair",
+  "short_name": "LuggageRepair",
+  "description": "Reliable luggage repair, accessories, and custom services with 15+ years of experience in Gaya.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16a34a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

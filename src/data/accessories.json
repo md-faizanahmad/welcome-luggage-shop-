@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "luggage",
+    "name": "Luggage Accessories",
+    "description": "All types of luggage accessories including wheels, handles, and covers.",
+    "image": "/images/luggage-accessories.jpg",
+    "parts": [
+      { "name": "Wheel Set", "price": 200, "image": "/images/wheel.jpg" },
+      { "name": "Handle Grip", "price": 150, "image": "/images/handle.jpg" }
+    ]
+  },
+  {
+    "slug": "bags",
+    "name": "Bags Accessories",
+    "description": "Backpack and travel bag accessories.",
+    "image": "/images/bags-accessories.jpg",
+    "parts": [
+      { "name": "Zipper Pull", "price": 50, "image": "/images/zipper.jpg" },
+      { "name": "Bag Strap", "price": 100, "image": "/images/strap.jpg" }
+    ]
+  },
+  {
+    "slug": "covers",
+    "name": "Covers Accessories",
+    "description": "Custom covers for all luggage and bags.",
+    "image": "/images/covers-accessories.jpg",
+    "parts": [
+      {
+        "name": "Plastic Cover",
+        "price": 250,
+        "image": "/images/plastic-cover.jpg"
+      },
+      {
+        "name": "Cloth Cover",
+        "price": 300,
+        "image": "/images/cloth-cover.jpg"
+      }
+    ]
+  },
+  {
+    "slug": "other",
+    "name": "Other Accessories",
+    "description": "Miscellaneous accessories for travel and bags.",
+    "image": "/images/other-accessories.jpg",
+    "parts": [
+      { "name": "Name Tag", "price": 50, "image": "/images/name-tag.jpg" },
+      { "name": "Lock Set", "price": 120, "image": "/images/lock.jpg" }
+    ]
+  }
+]

@@ -1,21 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import {
-  X,
-  Search,
-  ChevronDown,
-  ChevronLeft,
-  Instagram,
-  MessageCircleDashed,
-  Mail,
-  PhoneCall,
-} from "lucide-react";
+import { X, Search, ChevronDown, ChevronLeft } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { ChartNoAxesGantt } from "lucide-react";
 import Image from "next/image";
-import Logo from "@/assets/wtr.png";
+import { useRouter } from "next/navigation";
+import Logo from "@/assets/logo.png";
+
 export default function Navbar() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isAccessoriesOpen, setIsAccessoriesOpen] = useState(false);
@@ -26,59 +20,71 @@ export default function Navbar() {
     setIsServiceOpen(false);
     setIsAccessoriesOpen(false);
   };
-
   const toggleService = () => setIsServiceOpen(!isServiceOpen);
   const toggleAccessories = () => {
     setIsAccessoriesOpen(!isAccessoriesOpen);
     setIsServiceOpen(false);
   };
 
+  const serviceItems = [
+    { name: "Repairing of luggage", href: "/services/repairing-of-luggage" },
+    { name: "Wholesale parts", href: "/services/wholesale-parts" },
+    { name: "Custom covers", href: "/services/custom-covers" },
+    { name: "Dress alterations", href: "/services/dress-alterations" },
+  ];
+
+  // const accessoriesItems = [
+  //   { name: "Luggage Accessories", href: "/accessories/luggage" },
+  //   { name: "Bags Accessories", href: "/accessories/bags" },
+  //   { name: "Covers Accessories", href: "/accessories/covers" },
+  //   { name: "Other", href: "/accessories/other" },
+  // ];
+
+  // const searchItems = [...serviceItems, ...accessoriesItems];
+  const searchItems = [...serviceItems];
+
   const handleSearch = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log("Searching for:", searchQuery);
+    const query = searchQuery.toLowerCase().trim();
+    const foundItem = searchItems.find((item) =>
+      item.name.toLowerCase().includes(query)
+    );
+    if (foundItem) {
+      router.push(foundItem.href);
+      setSearchQuery("");
+      setIsOpen(false); // close mobile menu if open
+    } else {
+      alert("No matching service or accessory found.");
+    }
   };
-
-  const serviceItems = [
-    { name: "Repairing of luggage", href: "#" },
-    { name: "Wholesale parts", href: "#" },
-    { name: "Custom covers", href: "#" },
-    { name: "Dress alterations", href: "#" },
-  ];
-
-  const accessoriesItems = [
-    { name: "Luggage Accessories", href: "#" },
-    { name: "Bags Accessories", href: "#" },
-    { name: "Covers Accessories", href: "#" },
-    { name: "Other", href: "#" },
-  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link
-              href="/"
-              className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent"
-            >
-              <Image src={Logo} alt="" width={60} height={60} />
+            <Link href="/">
+              <Image src={Logo} alt="Logo" width={60} height={60} />
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/"
-              className="bg-gradient-to-r from-blue-500 to-blue-900 bg-clip-text text-transparent hover:text-blue-600"
-            >
+            <Link href="/" className="text-gray-800 hover:text-blue-600">
               Home
             </Link>
+            <Link href="/about" className="text-gray-800 hover:text-blue-600">
+              About
+            </Link>
+            <Link href="/gallery" className="text-gray-800 hover:text-blue-600">
+              Gallery
+            </Link>
+            {/* Service Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setIsServiceOpen(true)}
               onMouseLeave={() => setIsServiceOpen(false)}
             >
-              <button className="flex cursor-pointer items-center bg-gradient-to-r from-blue-500 to-blue-900 bg-clip-text text-transparent hover:text-blue-600">
-                Service List
-                <ChevronDown size={16} className="ml-1" />
+              <button className="flex items-center cursor-pointer text-gray-800 hover:text-blue-600">
+                Service List <ChevronDown size={16} className="ml-1" />
               </button>
               <AnimatePresence>
                 {isServiceOpen && (
@@ -103,16 +109,16 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            <div
+            {/* Accessories Dropdown */}
+            {/* <div
               className="relative"
               onMouseEnter={() => setIsAccessoriesOpen(true)}
               onMouseLeave={() => setIsAccessoriesOpen(false)}
-            >
-              <button className="flex cursor-pointer items-center bg-gradient-to-r from-blue-500 to-blue-900 bg-clip-text text-transparent hover:text-blue-600">
-                Accessories
-                <ChevronDown size={16} className="ml-1" />
-              </button>
-              <AnimatePresence>
+            > */}
+            {/* <button className="flex items-center cursor-pointer text-gray-800 hover:text-blue-600">
+                Accessories <ChevronDown size={16} className="ml-1" />
+              </button> */}
+            {/* <AnimatePresence>
                 {isAccessoriesOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
@@ -132,15 +138,14 @@ export default function Navbar() {
                     ))}
                   </motion.div>
                 )}
-              </AnimatePresence>
-            </div>
-            <Link
-              href="/support"
-              className="bg-gradient-to-r from-blue-500 to-blue-900 bg-clip-text text-transparent hover:text-blue-600"
-            >
+              </AnimatePresence> */}
+            {/* </div> */}
+
+            <Link href="/support" className="text-gray-800 hover:text-blue-600">
               Support
             </Link>
 
+            {/* Search Form */}
             <form onSubmit={handleSearch} className="relative">
               <input
                 type="text"
@@ -155,6 +160,7 @@ export default function Navbar() {
               />
             </form>
           </div>
+
           {/* Mobile Nav */}
           <div className="md:hidden flex items-center space-x-4">
             <form onSubmit={handleSearch} className="relative">
@@ -171,6 +177,7 @@ export default function Navbar() {
               />
             </form>
             <button
+              aria-label="Open Nav Menu"
               onClick={toggleMenu}
               className="text-gray-800 focus:outline-none"
             >
@@ -183,11 +190,12 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      {/* Mobile Nav */}
+
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden bg-white/100 shadow-lg backdrop-blur-lg absolute top-16 left-0 right-0 min-h-screen z-40"
+            className="md:hidden bg-white shadow-lg backdrop-blur-lg absolute top-16 left-0 right-0 min-h-screen z-40"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -202,30 +210,40 @@ export default function Navbar() {
                 >
                   Home
                 </Link>
+                <Link
+                  href="/about"
+                  className="text-gray-800 text-4xl hover:text-blue-600"
+                  onClick={toggleMenu}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/gallery"
+                  className="text-gray-800 text-4xl hover:text-blue-600"
+                  onClick={toggleMenu}
+                >
+                  Gallery
+                </Link>
                 <button
                   onClick={toggleService}
                   className="text-gray-800 text-4xl hover:text-blue-600 flex items-center justify-center w-full"
                 >
-                  Service List
+                  Service List{" "}
                   <ChevronDown
                     size={16}
-                    className={`ml-1 transform transition-transform ${
-                      isServiceOpen ? "rotate-180" : ""
-                    }`}
+                    className={`ml-1 ${isServiceOpen ? "rotate-180" : ""}`}
                   />
                 </button>
-                <button
+                {/* <button
                   onClick={toggleAccessories}
                   className="text-gray-800 text-4xl hover:text-blue-600 flex items-center justify-center w-full"
                 >
-                  Accessories
+                  Accessories{" "}
                   <ChevronDown
                     size={16}
-                    className={`ml-1 transform transition-transform ${
-                      isAccessoriesOpen ? "rotate-180" : ""
-                    }`}
+                    className={`ml-1 ${isAccessoriesOpen ? "rotate-180" : ""}`}
                   />
-                </button>
+                </button> */}
                 <Link
                   href="/support"
                   className="text-gray-800 text-4xl hover:text-blue-600"
@@ -233,12 +251,6 @@ export default function Navbar() {
                 >
                   Support
                 </Link>
-                <div className="icons flex space-x-4">
-                  <Instagram color="red" />
-                  <MessageCircleDashed color="green" />
-                  <Mail color="blue" />
-                  <PhoneCall color="green" />
-                </div>
               </div>
             )}
             {isServiceOpen && (
@@ -250,16 +262,16 @@ export default function Navbar() {
               >
                 <button
                   onClick={() => setIsServiceOpen(false)}
-                  className="flex items-center text-gray-800 text-3xl hover:text-blue-600 w-full pl-4 mb-4"
+                  className="flex items-center text-gray-800 text-3xl w-full pl-4 mb-4"
                 >
-                  <ChevronLeft size={36} className="mr-2 " color="skyblue" />
+                  <ChevronLeft size={36} className="mr-2" color="skyblue" />{" "}
                   Back
                 </button>
                 {serviceItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-gray-600 text-3xl hover:text-blue-600 w-full text-justify ms-20 py-5"
+                    className="text-gray-600 text-3xl w-full text-justify ms-20 py-5"
                     onClick={toggleMenu}
                   >
                     {item.name}
@@ -276,21 +288,21 @@ export default function Navbar() {
               >
                 <button
                   onClick={() => setIsAccessoriesOpen(false)}
-                  className="flex items-center text-gray-800 text-3x1 hover:text-blue-600 w-full pl-4 mb-4"
+                  className="flex items-center text-gray-800 text-3xl w-full pl-4 mb-4"
                 >
-                  <ChevronLeft size={36} className="mr-2" color="skyblue" />
+                  <ChevronLeft size={36} className="mr-2" color="skyblue" />{" "}
                   Back
                 </button>
-                {accessoriesItems.map((item) => (
+                {/* {accessoriesItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-gray-600 text-4xl hover:text-blue-600 w-full text-justify ms-20 py-1"
+                    className="text-gray-600 text-3xl w-full text-justify ms-20 py-1"
                     onClick={toggleMenu}
                   >
                     {item.name}
                   </Link>
-                ))}
+                ))} */}
               </motion.div>
             )}
           </motion.div>
