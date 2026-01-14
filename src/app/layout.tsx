@@ -3,11 +3,13 @@ import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/footer/Footer";
-import { Analytics } from "@vercel/analytics/next";
 import Loader from "@/components/shared/Loader";
 
 export const metadata: Metadata = {
   title: "Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya",
+  verification: {
+    google: "googleb0467f65887f6094.html", // Just the random string from Google
+  },
   description:
     "Expert luggage repair in Gaya. We specialize in fixing bags, trolleys, zips, wheels, and handles at affordable prices. Visit Welcome Luggage & Repairing Center for reliable repair services.",
   openGraph: {
@@ -64,7 +66,7 @@ export default function RootLayout({
       <body className="bg-white text-gray-800">
         <Navbar />
         <Suspense fallback={<Loader />}>{children}</Suspense>
-        <Analytics />
+
         <Footer />
       </body>
     </html>
