@@ -33,14 +33,6 @@ export default function Navbar() {
     { name: "Dress alterations", href: "/services/dress-alterations" },
   ];
 
-  // const accessoriesItems = [
-  //   { name: "Luggage Accessories", href: "/accessories/luggage" },
-  //   { name: "Bags Accessories", href: "/accessories/bags" },
-  //   { name: "Covers Accessories", href: "/accessories/covers" },
-  //   { name: "Other", href: "/accessories/other" },
-  // ];
-
-  // const searchItems = [...serviceItems, ...accessoriesItems];
   const searchItems = [...serviceItems];
 
   const handleSearch = (e: { preventDefault: () => void }) => {
@@ -108,38 +100,6 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
             </div>
-
-            {/* Accessories Dropdown */}
-            {/* <div
-              className="relative"
-              onMouseEnter={() => setIsAccessoriesOpen(true)}
-              onMouseLeave={() => setIsAccessoriesOpen(false)}
-            > */}
-            {/* <button className="flex items-center cursor-pointer text-gray-800 hover:text-blue-600">
-                Accessories <ChevronDown size={16} className="ml-1" />
-              </button> */}
-            {/* <AnimatePresence>
-                {isAccessoriesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute left-0 mt-2 w-48 bg-white/95 backdrop-blur-md shadow-lg rounded-md py-2 z-50"
-                  >
-                    {accessoriesItems.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence> */}
-            {/* </div> */}
 
             <Link href="/support" className="text-gray-800 hover:text-blue-600">
               Support
