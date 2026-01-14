@@ -28,9 +28,9 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* 2. Next-Gen Hover Overlay */}
         <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6">
           <div className="translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
-            {/* <span className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1 block">
+            {/* `<span className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1 block">
               welcome trolly
-            </span> */}
+            </span>` */}
             <h2 className="text-xl font-bold text-white leading-tight">
               {product.name}
             </h2>
