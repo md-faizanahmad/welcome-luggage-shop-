@@ -45,28 +45,8 @@ export default function ReviewSection() {
     },
   ]);
 
-  // const handleChange = (
-  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  // ) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prev) => ({ ...prev, [name]: value }));
-  // };
-
-  // const handleRating = (rating: number) => {
-  //   setFormData((prev) => ({ ...prev, rating }));
-  // };
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (formData.name && formData.rating && formData.review) {
-  //     setStaticReviews((prev) => [...prev, { ...formData }]);
-  //     setFormData({ name: "", rating: 0, review: "" }); // Reset form
-  //     // setIsModalOpen(false); // Close modal
-  //   }
-  // };
-
   return (
-    <div className="py-12 bg-gray-50">
+    <div className="py-12 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-black text-center mb-6 sm:mb-10">
           Customer Reviews
@@ -103,117 +83,6 @@ export default function ReviewSection() {
             Check Google Reviews
           </Link>
         </button>
-        {/* <AnimatePresence>
-          {isModalOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
-              onClick={() => setIsModalOpen(false)}
-            >
-              <motion.div
-                initial={{ scale: 0.9, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                transition={{ type: "spring", damping: 15, stiffness: 100 }}
-                className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 max-w-2xl w-full sm:w-3/4 md:w-2/3 lg:w-1/2 mx-4"
-                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
-              >
-                <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-black">
-                    Leave a Review
-                  </h3>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="text-black hover:text-gray-700 transition-colors"
-                  >
-                    <X size={24} />
-                  </button>
-                </div>
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-4">
-                    <label
-                      className="block text-black text-sm font-medium mb-2"
-                      htmlFor="name"
-                    >
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm placeholder:text-black"
-                      placeholder="Your Name"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label
-                      className="block text-black text-sm font-medium mb-2"
-                      htmlFor="email"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm placeholder:text-black"
-                      placeholder="Your Email"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label className="block text-black text-sm font-medium mb-2">
-                      Rating
-                    </label>
-                    <div className="flex space-x-2">
-                      {Array.from({ length: 5 }, (_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-5 h-5 cursor-pointer ${
-                            i < formData.rating
-                              ? "text-yellow-400"
-                              : "text-gray-300"
-                          }`}
-                          fill={i < formData.rating ? "currentColor" : "none"}
-                          onClick={() => handleRating(i + 1)}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="mb-4">
-                    <label
-                      className="block text-black text-sm font-medium mb-2"
-                      htmlFor="review"
-                    >
-                      Review
-                    </label>
-                    <textarea
-                      id="review"
-                      name="review"
-                      value={formData.review}
-                      onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm placeholder:text-black"
-                      placeholder="Write your review here..."
-                      rows={4}
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-green-500 text-white py-2 rounded-lg hover:from-blue-600 hover:to-green-600 transition-colors text-sm"
-                  >
-                    Submit Review
-                  </button>
-                </form>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence> */}
       </div>
     </div>
   );
