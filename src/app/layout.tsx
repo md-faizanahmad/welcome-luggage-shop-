@@ -98,6 +98,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+</head>
       <body className="bg-white text-gray-800">
         <Navbar />
         <Suspense fallback={<Loader />}>{children}</Suspense>
