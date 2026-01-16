@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/footer/Footer";
 import Loader from "@/components/shared/Loader";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya",
@@ -90,6 +91,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+<head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-myid"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       <body className="bg-white text-gray-800">
         <Navbar />
         <Suspense fallback={<Loader />}>{children}</Suspense>
