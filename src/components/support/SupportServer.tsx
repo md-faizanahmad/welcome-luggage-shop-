@@ -1,62 +1,64 @@
 import SupportClient from "./SupportClient";
 
+// Professional Business Data
 const supportData = {
   contact: {
-    email: "Md Mushtaque Ahmad",
-    phone: "+919430965836",
-    hours: "Mon-Sat, 10 AM - 8:30 PM IST & Sometimes Sunday ",
+    owner: "Md Mushtaque Ahmad",
+    phone: "+91 9430965836",
+    hours: "Mon-Sat: 10:00 AM – 8:30 PM (Sun: On Call)",
+    location: "Gaya, Bihar",
   },
   faqs: [
     {
-      question: "What types of items do you repair?",
+      question: "Which luggage brands do you repair?",
       answer:
-        "We repair all types of luggage, travel bags, and trolley bags including VIP, Skybags, Samsonite, Wildcraft, and more.",
+        "We specialize in all major brands including VIP, Skybags, Samsonite, American Tourister, Aristocrat, and Wildcraft.",
     },
     {
-      question: "Do you replace damaged parts like wheels or handles?",
+      question: "Do you provide genuine spare parts?",
       answer:
-        "Yes, we stock and replace wheels, handles, runners, and covers (plastic & cloth) at wholesale prices.",
+        "Yes, we stock high-quality wheels, telescopic handles, zippers, runners, and protective covers at wholesale prices.",
     },
     {
-      question: "Can you make custom covers for luggage?",
+      question: "Do you offer custom luggage covers?",
       answer:
-        "Yes, we provide custom covers and accessories for luggage and travel bags to suit your needs.",
+        "Absolutely. We provide custom-fit plastic and cloth covers to protect your luggage from scratches and rain.",
     },
     {
-      question: "Do you offer dress alteration services?",
+      question: "What types of dress alterations do you perform?",
       answer:
-        "Yes, we provide dress alterations for men, women, and children with neat stitching at reasonable rates.",
+        "We offer professional alterations for men, women, and children, ensuring a perfect fit with neat, boutique-quality stitching.",
     },
     {
-      question: "How long does a repair usually take?",
+      question: "Is there a warranty on repairs?",
       answer:
-        "Most repairs are completed within a few hours or a day, depending on the issue.",
-    },
-    {
-      question: "What are your service charges?",
-      answer:
-        "Our charges are affordable and vary depending on the type of repair or alteration. Visit us for a quick estimate.",
-    },
-    {
-      question: "Where is your shop located?",
-      answer:
-        "We are located in Gaya. Visit us today for reliable repairs and professional alterations.",
+        "We take pride in our craftsmanship. Most part replacements come with a service guarantee for your peace of mind.",
     },
   ],
 };
 
 export const metadata = {
-  title: "Support - TechFix",
-  description: "Get help and support for your devices at TechFix",
+  title:
+    "Expert Luggage Repair & Dress Alterations in Gaya | Md Mushtaque Ahmad",
+  description:
+    "Professional repair services for VIP, Skybags, and Samsonite in Gaya. We offer wheel replacement, handle repairs, and expert dress alterations at affordable rates.",
+  keywords:
+    "Luggage repair Gaya, Trolley bag repair, Skybags service center Gaya, Dress alteration Gaya, Suitcase wheel replacement",
 };
 
 export default function SupportServer() {
   return (
-    <div className="min-h-screen py-12 bg-gray-50 mt-10">
+    <div className="min-h-screen py-10 bg-slate-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-black text-center mb-8">
-          Support
-        </h1>
+        <header className="text-center mb-10">
+          <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">
+            Customer Support & Services
+          </h1>
+          <p className="mt-4 text-lg text-slate-600">
+            Reliable repairs and professional tailoring in Gaya
+          </p>
+        </header>
+
         <SupportClient supportData={supportData} />
       </div>
     </div>

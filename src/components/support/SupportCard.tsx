@@ -14,7 +14,7 @@ export default function SupportCard({ question, answer }: SupportCardProps) {
     <div className="border-b border-gray-200">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left py-4 flex justify-between items-center text-black text-sm sm:text-base font-medium hover:bg-gray-50 transition-colors"
+        className="w-full text-left cursor-pointer py-4 flex justify-between items-center text-black text-sm sm:text-base font-medium hover:bg-gray-50 transition-colors"
       >
         <span>{question}</span>
         <ChevronDown

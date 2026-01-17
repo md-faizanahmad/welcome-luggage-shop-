@@ -1,14 +1,15 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import SupportCard from "./SupportCard";
 import WhatsAppSupportForm from "../shared/Whatsapp";
 
 interface SupportData {
   contact: {
-    email: string;
+    owner: string;
     phone: string;
     hours: string;
+    location: string;
   };
   faqs: { question: string; answer: string }[];
 }
@@ -23,19 +24,21 @@ export default function SupportClient({
     threshold: 0.1,
   });
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.15 },
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   return (
@@ -44,39 +47,76 @@ export default function SupportClient({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={containerVariants}
-      className="space-y-8"
+      className="max-w-6xl mx-auto space-y-12"
     >
-      <div className="flex flex-col lg:flex-row gap-6">
-        <motion.div variants={itemVariants} className=" rounded-lg  p-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-black mb-4">
-            Contact Us
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        {/* Contact Info Card */}
+        <motion.div
+          variants={itemVariants}
+          className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm"
+        >
+          <h2 className="text-2xl font-bold text-slate-900 mb-6 border-b pb-4">
+            Visit Our Shop
           </h2>
-          <p className="text-black">
-            <strong>Onwer Name:</strong> {supportData.contact.email}
-          </p>
-          <p className="text-black">
-            <strong>Phone:</strong> {supportData.contact.phone}
-          </p>
-          <p className="text-black">
-            <strong>Hours:</strong> {supportData.contact.hours}
-          </p>
+          <div className="space-y-4">
+            <div>
+              <p className="text-sm uppercase tracking-wider text-slate-500 font-semibold">
+                Proprietor
+              </p>
+              <p className="text-lg font-medium text-slate-800">
+                {supportData.contact.owner}
+              </p>
+            </div>
+            <div>
+              <p className="text-sm uppercase tracking-wider text-slate-500 font-semibold">
+                Contact Number
+              </p>
+              <p className="text-lg font-medium text-blue-600">
+                {supportData.contact.phone}
+              </p>
+            </div>
+            <div>
+              <p className="text-sm uppercase tracking-wider text-slate-500 font-semibold">
+                Service Hours
+              </p>
+              <p className="text-lg font-medium text-slate-800">
+                {supportData.contact.hours}
+              </p>
+            </div>
+            <div>
+              <p className="text-sm uppercase tracking-wider text-slate-500 font-semibold">
+                Location
+              </p>
+              <p className="text-lg font-medium text-slate-800">
+                {supportData.contact.location}
+              </p>
+            </div>
+          </div>
         </motion.div>
-        <WhatsAppSupportForm />
+
+        {/* WhatsApp Form Section */}
+        <motion.div variants={itemVariants} className="h-full">
+          <WhatsAppSupportForm />
+        </motion.div>
       </div>
+
+      {/* FAQ Section */}
       <motion.div
         variants={itemVariants}
-        className="bg-white rounded-lg shadow-md p-6"
+        className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm"
       >
-        <h2 className="text-xl sm:text-2xl font-bold text-black mb-4">
-          Frequently Asked Questions
+        <h2 className="text-2xl font-bold text-slate-900 mb-8">
+          Common Questions
         </h2>
-        {supportData.faqs.map((faq, index) => (
-          <SupportCard
-            key={index}
-            question={faq.question}
-            answer={faq.answer}
-          />
-        ))}
+        <div className="grid grid-cols-1 gap-4">
+          {supportData.faqs.map((faq, index) => (
+            <SupportCard
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+            />
+          ))}
+        </div>
       </motion.div>
     </motion.div>
   );

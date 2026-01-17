@@ -42,6 +42,7 @@ export const metadata: Metadata = {
   keywords: [
     "trolley bag repair shop near me",
     "luggage repair Gaya",
+    "luggage service near me",
     "suitcase repair near me",
     "trolley wheel repair",
     "trolly wheel repair near me",
