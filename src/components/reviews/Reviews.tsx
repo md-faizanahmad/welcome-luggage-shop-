@@ -3,12 +3,12 @@ import { useState } from "react";
 import { Star } from "lucide-react";
 import Link from "next/link";
 
-interface FormData {
-  name: string;
+// interface FormData {
+//   name: string;
 
-  rating: number;
-  review: string;
-}
+//   rating: number;
+//   review: string;
+// }
 
 interface Review {
   name: string;
@@ -18,14 +18,15 @@ interface Review {
 }
 
 export default function ReviewSection() {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
+  // const [formData, setFormData] = useState<FormData>({
+  //   name: "",
 
-    rating: 0,
-    review: "",
-  });
+  //   rating: 0,
+  //   review: "",
+  // });
   // const [isModalOpen, setIsModalOpen] = useState(false);
-  const [staticReviews, setStaticReviews] = useState<Review[]>([
+  // const [staticReviews, setStaticReviews] = useState<Review[]>([
+  const [staticReviews] = useState<Review[]>([
     {
       name: "Priya Sharma",
       rating: 3,
