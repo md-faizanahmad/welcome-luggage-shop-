@@ -55,7 +55,7 @@ const Hero = () => {
           </p> */}
 
           <div className="flex flex-wrap gap-4">
-            <button className="group px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full transition-all flex items-center gap-2">
+            <button className="group px-8 py-4 bg-green-900 hover:bg-green-700 text-white font-bold rounded-full transition-all flex items-center gap-2">
               Book Repair Service
               <ArrowRight
                 className="group-hover:translate-x-1 transition-transform"
