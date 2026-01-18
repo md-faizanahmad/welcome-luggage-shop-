@@ -7,23 +7,23 @@ import { Skeleton } from "@mui/material";
 // Array of banner images with school-themed alt text for SEO
 const banners = [
   {
-    src: "/banner/Banner1.png",
+    src: "https://res.cloudinary.com/daqb5wglu/image/upload/v1768672490/Banner1_wn9asm.png",
     alt: "One-Stop Solution for All Bag & Trolley Repairs in Gaya",
   },
   {
-    src: "/banner/Banner2.png",
+    src: "https://res.cloudinary.com/daqb5wglu/image/upload/v1768673272/Banner_ffsvz2.jpg",
     alt: "All Types of Luggage Handles – Strong, Comfortable & Long-Lasting ",
   },
   {
-    src: "/banner/Banner3.png",
+    src: "https://res.cloudinary.com/daqb5wglu/image/upload/v1768673270/Banner5_gjfgk8.jpg",
     alt: "All Types Runner & zipper chain Available on Wholesale Price",
   },
   {
-    src: "/banner/Banner4.png",
+    src: "https://res.cloudinary.com/daqb5wglu/image/upload/v1768673270/Banner2_q2y9m4.jpg",
     alt: "All Types of Trolley & Luggage Wheels – Durable Replacements That Roll Smoothly",
   },
   {
-    src: "/banner/Banner5.png",
+    src: "https://res.cloudinary.com/daqb5wglu/image/upload/v1768672558/Banner4_dhujo5.png",
     alt: "All Types of Trolley & Luggage Parts & Repair",
   },
 ];
@@ -41,7 +41,7 @@ export default function BannerCarousel() {
     if (!isPaused) {
       autoScrollRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) =>
-          prevIndex === banners.length - 1 ? 0 : prevIndex + 1
+          prevIndex === banners.length - 1 ? 0 : prevIndex + 1,
         );
       }, 2000);
     }
@@ -59,14 +59,14 @@ export default function BannerCarousel() {
   // Handle Next button
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === banners.length - 1 ? 0 : prevIndex + 1
+      prevIndex === banners.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
   // Handle Previous button
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? banners.length - 1 : prevIndex - 1
+      prevIndex === 0 ? banners.length - 1 : prevIndex - 1,
     );
   };
 
@@ -124,7 +124,7 @@ export default function BannerCarousel() {
               alt={banners[currentIndex].alt}
               fill
               className="object-fill rounded-xl"
-              priority={currentIndex === 0}
+              priority
               onLoad={() => setIsLoading(false)}
             />
             {/* Gradient Overlay for Professional Look */}

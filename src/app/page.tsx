@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
-import BannerCarousel from "@/components/hero/HeroCarousel";
 import ProductCatalogServer from "@/components/productcatalog/ProductCatalogServer";
 import ReviewSection from "@/components/reviews/Reviews";
 import StatsCounter from "@/components/shared/ShopStats";
 import ServicesClient from "@/components/whatwedo/WhatWeDoClient";
+import Hero from "@/components/hero/Hero";
+import Link from "next/link";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -25,7 +26,8 @@ export default function Home() {
 
       {/* 2. Hero Section - Full Bleed */}
       <section className="relative w-full overflow-hidden">
-        <BannerCarousel />
+        {/* <BannerCarousel /> */}
+        <Hero />
       </section>
 
       {/* 3. Services Section - Negative Margin for Depth */}
@@ -66,7 +68,9 @@ export default function Home() {
           whileTap={{ scale: 0.9 }}
           className="bg-blue-600 text-white p-4 rounded-full shadow-2xl flex items-center gap-2 font-bold uppercase tracking-widest text-[10px]"
         >
-          Book Now
+          <Link href="/support" className="">
+            Book Now
+          </Link>
         </motion.button>
       </div>
     </div>
