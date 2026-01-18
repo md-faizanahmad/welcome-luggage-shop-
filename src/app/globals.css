@@ -33,3 +33,10 @@ body {
     scrollbar-width: none;
   }
 }
+
+button {
+  cursor: pointer;
+}
+.service-card-container {
+  transition: opacity 0.5s ease;
+}

@@ -29,11 +29,11 @@ const HeroClient = () => {
             whileHover={{ scale: 1.05, x: -10 }}
             className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl flex items-center gap-4 cursor-default"
           >
-            <div className="bg-blue-500 p-3 mt-4 rounded-xl shadow-lg shadow-blue-500/40">
+            <div className="bg-green-500 p-3 mt-4 rounded-xl shadow-lg shadow-blue-500/40">
               <stat.icon className="text-white" size={24} />
             </div>
             <div>
-              <p className="text-xs text-blue-300 uppercase tracking-widest font-bold">
+              <p className="text-xs text-white uppercase tracking-widest font-bold">
                 {stat.label}
               </p>
               <p className="text-xl text-white font-semibold">{stat.value}</p>

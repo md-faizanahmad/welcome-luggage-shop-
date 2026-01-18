@@ -1,6 +1,6 @@
 // components/Hero.tsx
 import React from "react";
-import { Wrench, Luggage, ShieldCheck, ArrowRight } from "lucide-react";
+import { ShieldCheck, ArrowRight } from "lucide-react";
 import HeroClient from "./HeroClient";
 
 // Server-side Component for SEO
@@ -24,7 +24,7 @@ const Hero = () => {
           muted
           playsInline
           className="w-full h-full object-cover opacity-40"
-          poster="/Banner1.png"
+          poster="https://res.cloudinary.com/daqb5wglu/image/upload/v1768672490/Banner1_wn9asm.png"
         >
           <source
             src="/Video_Generation_Luggage_Repairs_Parts.mp4"
@@ -37,7 +37,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side: Server Side Content (SEO) */}
         <header>
-          <div className="inline-flex mt-6 items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium ">
+          <div className="inline-flex mt-6 items-center gap-2 px-3 py-1 rounded-full  border border-green-500/30 text-white text-sm font-medium ">
             <ShieldCheck size={16} />
             <span>{seoContent.location}&apos;s Premier Workshop</span>
           </div>
@@ -55,7 +55,7 @@ const Hero = () => {
           </p> */}
 
           <div className="flex flex-wrap gap-4">
-            <button className="group px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all flex items-center gap-2">
+            <button className="group px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-full transition-all flex items-center gap-2">
               Book Repair Service
               <ArrowRight
                 className="group-hover:translate-x-1 transition-transform"

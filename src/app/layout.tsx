@@ -82,9 +82,13 @@ export const metadata: Metadata = {
     "trolley chain repair near me",
     "trolley bag lock repair near me",
   ],
-  themeColor: "#16a34a",
 };
-
+<Script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-myid"
+  crossOrigin="anonymous"
+  strategy="afterInteractive"
+/>;
 export default function RootLayout({
   children,
 }: {
@@ -92,14 +96,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-<head>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-myid"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-</head>
       <body className="bg-white text-gray-800">
         <Navbar />
         <Suspense fallback={<Loader />}>{children}</Suspense>

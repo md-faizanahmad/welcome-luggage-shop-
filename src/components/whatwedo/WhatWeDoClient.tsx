@@ -38,11 +38,6 @@ export default function ServicesClient() {
       variants={containerVariants}
     >
       {/* We use CSS selectors to target the children within the Server Component */}
-      <style jsx global>{`
-        .service-card-container {
-          transition: opacity 0.5s ease;
-        }
-      `}</style>
 
       {/* Note: To animate individual cards inside a Server Component from a Client Parent, 
         we usually wrap the Server Component in a motion div. 
