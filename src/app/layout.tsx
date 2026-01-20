@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
+    siteName: "Welcome Luggage & Repairing Center",
     title: "Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya",
     description:
       "Your trusted luggage, bag, and trolley repair shop in Gaya. Affordable and professional repair services for all brands.",
@@ -32,19 +33,20 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og_image.png", // ✅ your OG image
+        url: "/og_image.png1", // ✅ your OG image
         width: 1200,
         height: 630,
         alt: "Welcome Luggage & Repairing Center - Bag & Trolley Repair in Gaya",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya",
     description:
       "Expert luggage, bag, and trolley repair services in Gaya. Trusted shop for zips, wheels, and handle fixes.",
-    images: ["/og_image.png"], // ✅ for Twitter
+    images: ["/og_image.png1"], // ✅ for Twitter
   },
   icons: {
     icon: "/favicon.ico",
