@@ -1,5 +1,4 @@
 import { services } from "@/data/services";
-import { notFound } from "next/navigation";
 import Image from "next/image";
 
 interface Part {
@@ -17,13 +16,19 @@ interface Service {
 }
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
-
 export const generateMetadata = async ({ params }: PageProps) => {
-  const { slug } = await params;
+  const { slug } = params;
   const service = services.find((s) => s.slug === slug);
-  if (!service) return { title: "Service Not Found" };
+
+  if (!service) {
+    return {
+      title: "Service Not Found | Welcome Luggage & Repairing Center",
+      description:
+        "Looking for luggage or trolley repair in Gaya? Welcome Luggage & Repairing Center offers zip, wheel, handle, and suitcase repair services.",
+    };
+  }
 
   return {
     title: `${service.title} | Welcome Luggage & Repairing Center`,
@@ -33,16 +38,27 @@ export const generateMetadata = async ({ params }: PageProps) => {
       description: service.description,
       url: `https://www.welcomeluggagerepair.shop/services/${slug}`,
       type: "website",
-      images: [service.image],
+      images: [
+        {
+          url: service.image,
+          alt: service.title,
+        },
+      ],
     },
   };
 };
 
 export default async function ServicePage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug } = params;
   const service: Service | undefined = services.find((s) => s.slug === slug);
 
-  if (!service) return notFound();
+  if (!service) {
+    return {
+      title: "Service Not Found | Welcome Luggage & Repairing Center",
+      description:
+        "The requested service could not be found. Contact Welcome Luggage & Repairing Center in Gaya for luggage and trolley repair services.",
+    };
+  }
 
   return (
     <main className="max-w-6xl mx-auto px-4 pt-10 pb-10 ">

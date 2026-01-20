@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { X, Search, ChevronDown, ChevronLeft, Menu } from "lucide-react";
+import { X, ChevronDown, ChevronLeft, Menu } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import Logo from "@/assets/logo.png";
 
 export default function Navbar() {
-  const router = useRouter();
+  // const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  // const [searchQuery, setSearchQuery] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
   // 1. Lock scroll when mobile menu is open
@@ -45,18 +45,18 @@ export default function Navbar() {
     { name: "Dress Alterations", href: "/services/dress-alterations" },
   ];
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    const query = searchQuery.toLowerCase().trim();
-    const foundItem = serviceItems.find((item) =>
-      item.name.toLowerCase().includes(query),
-    );
-    if (foundItem) {
-      router.push(foundItem.href);
-      setSearchQuery("");
-      setIsOpen(false);
-    }
-  };
+  // const handleSearch = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   const query = searchQuery.toLowerCase().trim();
+  //   const foundItem = serviceItems.find((item) =>
+  //     item.name.toLowerCase().includes(query),
+  //   );
+  //   if (foundItem) {
+  //     router.push(foundItem.href);
+  //     setSearchQuery("");
+  //     setIsOpen(false);
+  //   }
+  // };
 
   return (
     <>
@@ -143,7 +143,7 @@ export default function Navbar() {
             </div>
 
             {/* Search */}
-            <div className="hidden md:flex items-center gap-4">
+            {/* <div className="hidden md:flex items-center gap-4">
               <form onSubmit={handleSearch} className="relative group">
                 <input
                   type="text"
@@ -157,7 +157,7 @@ export default function Navbar() {
                   size={14}
                 />
               </form>
-            </div>
+            </div> */}
 
             {/* Mobile Toggle */}
             <button
@@ -208,7 +208,7 @@ export default function Navbar() {
                       Support
                     </MobileLink>
 
-                    <form onSubmit={handleSearch} className="mt-8">
+                    {/* <form onSubmit={handleSearch} className="mt-8">
                       <input
                         type="text"
                         value={searchQuery}
@@ -216,7 +216,7 @@ export default function Navbar() {
                         placeholder="SEARCH..."
                         className="w-full bg-slate-100 border-none p-5 rounded-2xl text-lg font-bold uppercase tracking-widest"
                       />
-                    </form>
+                    </form> */}
                   </>
                 ) : (
                   <motion.div

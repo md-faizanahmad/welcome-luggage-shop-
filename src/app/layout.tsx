@@ -11,6 +11,8 @@ import { DEFAULT_KEYWORDS } from "./keyword";
 export const metadata: Metadata = {
   metadataBase: new URL("https://welcomeluggagerepair.shop"),
   title: "Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya",
+  description:
+    "Expert luggage repair in Gaya. We specialize in fixing bags, trolleys, zips, wheels, and handles at affordable prices. Visit Welcome Luggage & Repairing Center for reliable repair services.",
   keywords: [
     ...DEFAULT_KEYWORDS,
     "luggage repairing service Gaya",
@@ -20,8 +22,7 @@ export const metadata: Metadata = {
   verification: {
     google: "googleb0467f65887f6094.html", // Just the random string from Google
   },
-  description:
-    "Expert luggage repair in Gaya. We specialize in fixing bags, trolleys, zips, wheels, and handles at affordable prices. Visit Welcome Luggage & Repairing Center for reliable repair services.",
+
   openGraph: {
     title: "Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya",
     description:
@@ -63,7 +64,7 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-myid"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
         />
         <FirebaseAnalytics />
         <Navbar />
