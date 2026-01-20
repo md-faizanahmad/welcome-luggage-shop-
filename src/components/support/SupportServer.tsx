@@ -1,6 +1,15 @@
-import SupportClient from "./SupportClient";
+import {
+  MapPin,
+  Phone,
+  Clock,
+  User,
+  ShieldCheck,
+  HelpCircle,
+} from "lucide-react";
+import SupportCard from "./SupportCard"; // Use the <details> version
+import WhatsAppSupportForm from "../shared/Whatsapp";
+import React from "react";
 
-// Professional Business Data
 const supportData = {
   contact: {
     owner: "Md Mushtaque Ahmad",
@@ -37,29 +46,105 @@ const supportData = {
   ],
 };
 
-export const metadata = {
-  title:
-    "Expert Luggage Repair & Dress Alterations in Gaya | Md Mushtaque Ahmad",
-  description:
-    "Professional repair services for VIP, Skybags, and Samsonite in Gaya. We offer wheel replacement, handle repairs, and expert dress alterations at affordable rates.",
-  keywords:
-    "Luggage repair Gaya, Trolley bag repair, Skybags service center Gaya, Dress alteration Gaya, Suitcase wheel replacement",
-};
-
-export default function SupportServer() {
+export default function SupportPage() {
   return (
-    <div className="min-h-screen py-10 bg-slate-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-10">
-          <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">
-            Customer Support & Services
-          </h1>
-          <p className="mt-4 text-lg text-slate-600">
-            Reliable repairs and professional tailoring in Gaya
-          </p>
-        </header>
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* 1. Minimal Header */}
+      <header className="mb-12 border-l-4 border-blue-600 pl-6">
+        <h1 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+          Support & Professional Services
+        </h1>
+        <p className="text-slate-500 mt-1 font-medium italic">
+          Welcome Luggage & Repairing Center — Gaya
+        </p>
+      </header>
 
-        <SupportClient supportData={supportData} />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        {/* 2. Left Column: Business Details & WhatsApp */}
+        <div className="lg:col-span-5 space-y-8">
+          {/* Contact Grid - No BG, just clean borders */}
+          <section className="border border-slate-200 rounded-2xl p-6">
+            <h2 className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-blue-600 mb-6">
+              <ShieldCheck size={18} /> Business Information
+            </h2>
+
+            <div className="grid grid-cols-1 gap-6">
+              <InfoItem
+                icon={<User size={18} />}
+                label="Proprietor"
+                value={supportData.contact.owner}
+              />
+              <InfoItem
+                icon={<Phone size={18} />}
+                label="Phone"
+                value={supportData.contact.phone}
+                highlight
+              />
+              <InfoItem
+                icon={<Clock size={18} />}
+                label="Hours"
+                value={supportData.contact.hours}
+              />
+              <InfoItem
+                icon={<MapPin size={18} />}
+                label="Location"
+                value={supportData.contact.location}
+              />
+            </div>
+          </section>
+
+          {/* WhatsApp Section */}
+          <div className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+            <WhatsAppSupportForm />
+          </div>
+        </div>
+
+        {/* 3. Right Column: FAQs */}
+        <section className="lg:col-span-7">
+          <div className="flex items-center gap-3 mb-6">
+            <HelpCircle className="text-blue-600" />
+            <h2 className="text-xl font-bold text-slate-900">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="border-t border-slate-100">
+            {supportData.faqs.map((faq, index) => (
+              <SupportCard
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
+
+// Minimalist Sub-component
+
+interface InfoItemsProps {
+  icon: React.ReactNode;
+  label: string;
+  value: React.ReactNode;
+  highlight?: boolean;
+}
+
+function InfoItem({ icon, label, value, highlight = false }: InfoItemsProps) {
+  return (
+    <div className="flex items-start gap-4">
+      <div className="mt-1 text-slate-400">{icon}</div>
+      <div>
+        <p className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+          {label}
+        </p>
+        <p
+          className={`text-base font-semibold ${highlight ? "text-blue-600" : "text-slate-800"}`}
+        >
+          {value}
+        </p>
       </div>
     </div>
   );

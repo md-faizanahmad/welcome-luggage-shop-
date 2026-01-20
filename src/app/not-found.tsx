@@ -1,18 +1,17 @@
 import { FourOhFourClient } from "./FourOhFourClient";
 
 export const metadata = {
-  title:
-    "404 - Page Not Found | Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya ",
+  title: "404 - Lost Your Way? | Welcome Luggage & Repairing Center Gaya",
   description:
-    "Oops! The page you’re looking for doesn’t exist. Return to Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya homepage.",
+    "Looking for bag or trolley repair in Gaya? This page might be missing, but our repair services are always available.",
 };
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen py-12  mt-10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <main className="min-h-[90vh] flex items-center justify-center ">
+      <div className="container mx-auto py-16">
         <FourOhFourClient />
       </div>
-    </div>
+    </main>
   );
 }

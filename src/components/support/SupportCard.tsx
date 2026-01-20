@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 interface SupportCardProps {
@@ -8,24 +6,25 @@ interface SupportCardProps {
 }
 
 export default function SupportCard({ question, answer }: SupportCardProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className="border-b border-gray-200">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left cursor-pointer py-4 flex justify-between items-center text-black text-sm sm:text-base font-medium hover:bg-gray-50 transition-colors"
-      >
-        <span>{question}</span>
-        <ChevronDown
-          className={`w-5 h-5 transform transition-transform ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      {isOpen && (
-        <div className="pb-4 text-black text-sm sm:text-base">{answer}</div>
-      )}
+    <div className="border-b border-slate-200">
+      <details className="group [&_summary::-webkit-details-marker]:hidden">
+        <summary className="flex cursor-pointer items-center justify-between py-5 text-slate-900 transition-colors hover:text-blue-600">
+          <h3 className="text-base sm:text-lg font-bold leading-tight select-none">
+            {question}
+          </h3>
+
+          <span className="ml-4 flex-shrink-0 transition-transform duration-300 group-open:-rotate-180">
+            <ChevronDown className="h-5 w-5 text-slate-500 group-hover:text-blue-600" />
+          </span>
+        </summary>
+
+        <div className="pb-6 pr-6 animate-in fade-in slide-in-from-top-2 duration-300">
+          <p className="text-sm sm:text-base leading-relaxed text-slate-600">
+            {answer}
+          </p>
+        </div>
+      </details>
     </div>
   );
 }

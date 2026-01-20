@@ -7,6 +7,8 @@ import StatsCounter from "@/components/shared/ShopStats";
 import ServicesClient from "@/components/whatwedo/WhatWeDoClient";
 import Hero from "@/components/hero/Hero";
 import Link from "next/link";
+import { ZipperReplacementSection } from "@/components/Zipper/ZipperReplacement";
+import { TrolleyRepairSection } from "@/components/trolley/TrolleyRepair";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -33,7 +35,8 @@ export default function Home() {
       {/* 3. Services Section - Negative Margin for Depth */}
 
       <ServicesClient />
-
+      <TrolleyRepairSection />
+      <ZipperReplacementSection />
       {/* 4. Stats Counter - Minimalist Strip */}
       <section className="py-16 md:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto">
