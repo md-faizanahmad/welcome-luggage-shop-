@@ -11,6 +11,7 @@ import Loader from "@/shared/Loader";
 export const metadata: Metadata = {
   metadataBase: new URL("https://welcomeluggagerepair.shop"),
   title: "Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya",
+
   description:
     "Expert luggage repair in Gaya. We specialize in fixing bags, trolleys, zips, wheels, and handles at affordable prices. Visit Welcome Luggage & Repairing Center for reliable repair services.",
   keywords: [

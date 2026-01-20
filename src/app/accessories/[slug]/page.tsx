@@ -21,7 +21,7 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function AccessoryPage({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { slug } = await params; // ✅ params is async in Next.js 13+
 
   const accessory: Accessory | undefined = accessoriesData.find(
