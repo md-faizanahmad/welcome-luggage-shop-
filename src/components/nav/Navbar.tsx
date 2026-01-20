@@ -49,7 +49,7 @@ export default function Navbar() {
     e.preventDefault();
     const query = searchQuery.toLowerCase().trim();
     const foundItem = serviceItems.find((item) =>
-      item.name.toLowerCase().includes(query)
+      item.name.toLowerCase().includes(query),
     );
     if (foundItem) {
       router.push(foundItem.href);
@@ -81,7 +81,11 @@ export default function Navbar() {
             }`}
           >
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0 z-50">
+            <Link
+              href="/"
+              className="flex-shrink-0 z-50"
+              aria-label="Luggage Repair Service in Gaya"
+            >
               <Image
                 src={Logo}
                 alt="Logo"
@@ -122,6 +126,7 @@ export default function Navbar() {
                     >
                       {serviceItems.map((item) => (
                         <Link
+                          aria-label={item.name}
                           key={item.name}
                           href={item.href}
                           className="block px-6 py-3 text-sm font-medium text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-all"
@@ -227,6 +232,7 @@ export default function Navbar() {
                     </button>
                     {serviceItems.map((item) => (
                       <Link
+                        aria-label={item.name}
                         key={item.name}
                         href={item.href}
                         onClick={() => setIsOpen(false)}
@@ -255,6 +261,7 @@ function NavLink({
 }) {
   return (
     <Link
+      aria-label={href}
       href={href}
       className="px-4 py-2 text-sm font-bold uppercase tracking-widest text-slate-700 hover:text-blue-600 transition-colors relative group"
     >
@@ -275,6 +282,7 @@ function MobileLink({
 }) {
   return (
     <Link
+      aria-label={href}
       href={href}
       onClick={onClick}
       className="text-5xl font-black uppercase tracking-tighter hover:text-blue-600 transition-colors py-2 border-b border-slate-50"

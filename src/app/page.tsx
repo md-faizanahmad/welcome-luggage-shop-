@@ -68,7 +68,7 @@ export default function Home() {
           whileTap={{ scale: 0.9 }}
           className="bg-blue-600 text-white p-4 rounded-full shadow-2xl flex items-center gap-2 font-bold uppercase tracking-widest text-[10px]"
         >
-          <Link href="/support" className="">
+          <Link href="/support" className="" aria-label="Support ">
             Book Now
           </Link>
         </motion.button>

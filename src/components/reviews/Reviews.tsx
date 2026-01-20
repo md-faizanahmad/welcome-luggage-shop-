@@ -80,7 +80,11 @@ export default function ReviewSection() {
           ))}
         </div>
         <button className="mx-auto mt-10 text-white block bg-gradient-to-r from-blue-500 to-green-500 cursor-pointer px-4 py-2 rounded-lg hover:from-blue-600 hover:to-green-600 transition-colors text-sm sm:text-base mb-8">
-          <Link href="https://g.page/r/CZrs6WrrwRnoEBM/review" target="_blank">
+          <Link
+            href="https://g.page/r/CZrs6WrrwRnoEBM/review"
+            target="_blank"
+            aria-label="Check Google Business Rewview"
+          >
             Check Google Reviews
           </Link>
         </button>

@@ -1,15 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import Link from "next/link";
 
 export function FourOhFourClient() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-  const router = useRouter();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -50,12 +49,12 @@ export function FourOhFourClient() {
         moved. Let’s get you back on track with your device repairs!
       </motion.p>
       <motion.div variants={itemVariants}>
-        <button
-          onClick={() => router.push("/")}
+        <Link
+          href="/"
           className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-green-600 transition-colors text-sm sm:text-base"
         >
-          Return to Homepage
-        </button>
+          📞 Call for Repair Help +91 9430965836
+        </Link>
       </motion.div>
     </motion.div>
   );

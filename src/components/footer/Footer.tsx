@@ -38,6 +38,7 @@ export default function Footer() {
                 <Link
                   target="_blank"
                   href="tel:+919430965836"
+                  aria-label="Call to +91 9430965836"
                   className="group flex items-center gap-3 text-gray-800 hover:text-blue-600 transition-colors"
                 >
                   <div className="p-2 bg-gray-50 rounded-lg group-hover:bg-blue-50 transition-colors">
@@ -49,6 +50,7 @@ export default function Footer() {
                 <Link
                   target="_blank"
                   href="https://wa.me/9430965836"
+                  aria-label="Whatsapp Us"
                   className="group flex items-center gap-3 text-gray-800 hover:text-green-600 transition-colors"
                 >
                   <div className="p-2 bg-gray-50 rounded-lg group-hover:bg-green-50 transition-colors">
@@ -97,10 +99,18 @@ export default function Footer() {
             © {currentYear} Welcome Luggage Center
           </p>
           <div className="flex gap-8 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-            <Link href="#" className="hover:text-black transition-colors">
+            <Link
+              href="#"
+              className="hover:text-black transition-colors"
+              aria-label="Welcome Luggage Privacy"
+            >
               Privacy
             </Link>
-            <Link href="#" className="hover:text-black transition-colors">
+            <Link
+              href="#"
+              className="hover:text-black transition-colors"
+              aria-label="Welcome Luggage Terms"
+            >
               Terms
             </Link>
           </div>

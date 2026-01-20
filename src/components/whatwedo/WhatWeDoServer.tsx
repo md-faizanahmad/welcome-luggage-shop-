@@ -154,7 +154,11 @@ export default function WhatWeDoServer() {
               key={index}
               className="min-w-[85vw] sm:min-w-[45vw] md:min-w-0 snap-center service-card-container"
             >
-              <Link href={service.link} className="group relative block h-full">
+              <Link
+                href={service.link}
+                aria-label={service.link}
+                className="group relative block h-full"
+              >
                 <div className="relative h-[420px] w-full overflow-hidden rounded-[2.5rem]  transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-blue-100 group-hover:-translate-y-2">
                   {/* Image Container */}
                   <div className="absolute inset-0 p-10 flex items-center justify-center transition-transform duration-700 group-hover:scale-105 group-hover:-translate-y-8">

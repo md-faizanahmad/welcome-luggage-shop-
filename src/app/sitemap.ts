@@ -1,41 +1,27 @@
 import { MetadataRoute } from "next";
-
-// Example data sources (services, accessories, etc.)
 import { services } from "@/data/services";
 import accessoriesData from "@/data/accessories.json";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.welcomeluggagerepair.shop";
+  const LAST_MOD = new Date("2025-12-01");
 
-  // Static routes
-  const routes = [
-    "",
-    "/about",
-    "/services",
-    "/accessories",
-    "/gallery",
-    "/contact",
-  ].map((route) => ({
+  // Core indexable pages only
+  const routes = ["", "/about", "/services", "/accessories"].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 1.0,
+    lastModified: LAST_MOD,
   }));
 
-  // Dynamic service pages
+  // Service pages (important)
   const serviceRoutes = services.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
+    lastModified: LAST_MOD,
   }));
 
-  // Dynamic accessory pages
+  // Accessories pages (secondary)
   const accessoryRoutes = accessoriesData.map((item) => ({
     url: `${baseUrl}/accessories/${item.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
+    lastModified: LAST_MOD,
   }));
 
   return [...routes, ...serviceRoutes, ...accessoryRoutes];
