@@ -2,11 +2,11 @@
 import Hero from "@/components/hero/Hero";
 import ProductCatalogServer from "@/components/productcatalog/ProductCatalogServer";
 import ReviewSection from "@/components/reviews/Reviews";
-import StatsCounter from "@/components/shared/ShopStats";
 import ServicesClient from "@/components/whatwedo/WhatWeDoClient";
 import { ZipperReplacementSection } from "@/components/Zipper/ZipperReplacement";
 import { TrolleyRepairSection } from "@/components/trolley/TrolleyRepair";
 import { Metadata } from "next";
+import StatsCounter from "@/shared/ShopStats";
 export const metadata: Metadata = {
   title: "Bag & Trolley Repair Shop in Gaya | Welcome Luggage Center",
   description:

@@ -16,19 +16,13 @@ interface Service {
 }
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
-export const generateMetadata = async ({ params }: PageProps) => {
-  const { slug } = params;
-  const service = services.find((s) => s.slug === slug);
 
-  if (!service) {
-    return {
-      title: "Service Not Found | Welcome Luggage & Repairing Center",
-      description:
-        "Looking for luggage or trolley repair in Gaya? Welcome Luggage & Repairing Center offers zip, wheel, handle, and suitcase repair services.",
-    };
-  }
+export const generateMetadata = async ({ params }: PageProps) => {
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
+  if (!service) return { title: "Service Not Found" };
 
   return {
     title: `${service.title} | Welcome Luggage & Repairing Center`,
@@ -38,18 +32,13 @@ export const generateMetadata = async ({ params }: PageProps) => {
       description: service.description,
       url: `https://www.welcomeluggagerepair.shop/services/${slug}`,
       type: "website",
-      images: [
-        {
-          url: service.image,
-          alt: service.title,
-        },
-      ],
+      images: [service.image],
     },
   };
 };
 
-export default async function ServicePage({ params }: PageProps) {
-  const { slug } = params;
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
   const service: Service | undefined = services.find((s) => s.slug === slug);
 
   if (!service) {

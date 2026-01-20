@@ -1,4 +1,3 @@
-import { notFound } from "next/navigation";
 import Image from "next/image";
 import accessoriesData from "@/data/accessories.json";
 import PartsCard from "@/components/accessorycard/accessorycard";
@@ -26,10 +25,15 @@ export default async function AccessoryPage({ params }: PageProps) {
   const { slug } = await params; // ✅ params is async in Next.js 13+
 
   const accessory: Accessory | undefined = accessoriesData.find(
-    (item) => item.slug === slug
+    (item) => item.slug === slug,
   );
-
-  if (!accessory) return notFound();
+  if (!accessory) {
+    return {
+      title: "Service Not Found | Welcome Luggage & Repairing Center",
+      description:
+        "The requested service could not be found. Contact Welcome Luggage & Repairing Center in Gaya for luggage and trolley repair services.",
+    };
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 space-y-8">

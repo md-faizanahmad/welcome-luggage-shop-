@@ -3,10 +3,10 @@ import { Suspense } from "react";
 import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/footer/Footer";
-import Loader from "@/components/shared/Loader";
 import Script from "next/script";
 import FirebaseAnalytics from "@/components/FirebaseAnalytics/FirebaseAnalytics";
 import { DEFAULT_KEYWORDS } from "./keyword";
+import Loader from "@/shared/Loader";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://welcomeluggagerepair.shop"),

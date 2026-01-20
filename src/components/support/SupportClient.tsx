@@ -1,5 +1,5 @@
+import WhatsAppSupportForm from "@/shared/Whatsapp";
 import SupportCard from "./SupportCard"; // Ensure this uses the <details> tag we made
-import WhatsAppSupportForm from "../shared/Whatsapp";
 import { MapPin, Phone, Clock, User, MessageCircle } from "lucide-react";
 
 interface SupportData {

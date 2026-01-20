@@ -1,7 +1,5 @@
 import SupportServer from "@/components/support/SupportServer";
 
-function Support() {
+export default function Page() {
   return <SupportServer />;
 }
-
-export default Support;

@@ -7,8 +7,8 @@ import {
   HelpCircle,
 } from "lucide-react";
 import SupportCard from "./SupportCard"; // Use the <details> version
-import WhatsAppSupportForm from "../shared/Whatsapp";
 import React from "react";
+import WhatsAppSupportForm from "@/shared/Whatsapp";
 
 const supportData = {
   contact: {
@@ -46,7 +46,7 @@ const supportData = {
   ],
 };
 
-export default function SupportPage() {
+export default function SupportServer() {
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* 1. Minimal Header */}
