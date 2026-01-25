@@ -1,7 +1,8 @@
 // components/Hero.tsx
 import React from "react";
-import { ShieldCheck, ArrowRight } from "lucide-react";
+import { ShieldCheck, ArrowUpRight } from "lucide-react";
 import HeroClient from "./HeroClient";
+import Link from "next/link";
 
 // Server-side Component for SEO
 const Hero = () => {
@@ -56,14 +57,22 @@ const Hero = () => {
 
           <div className="flex flex-wrap gap-4">
             <button className="group px-8 py-4 bg-green-900 hover:bg-green-700 text-white font-bold rounded-full transition-all flex items-center gap-2">
-              Book Repair Service
-              <ArrowRight
-                className="group-hover:translate-x-1 transition-transform"
-                size={20}
-              />
+              <Link
+                href="https://www.google.com/maps/place/Welcome+Luggage+%26+Repairing+Center/@24.7970761,85.0061303,707m/data=!3m1!1e3!4m14!1m7!3m6!1s0x39f32b30ac38c101:0xe819c1eb6ae9ec9a!2sWelcome+Luggage+%26+Repairing+Center!8m2!3d24.7960991!4d85.0084257!16s%2Fg%2F11tmz80tj7!3m5!1s0x39f32b30ac38c101:0xe819c1eb6ae9ec9a!8m2!3d24.7960991!4d85.0084257!16s%2Fg%2F11tmz80tj7?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="flex items-center gap-2">
+                  Get Directions <ArrowUpRight size={14} />
+                </span>
+              </Link>
             </button>
             <button className="px-8 py-4 border border-slate-500 hover:border-white text-white font-bold rounded-full transition-all">
-              Wholesale Parts
+              <Link href="/wholesale" target="_blank">
+                <span className="flex items-center gap-2">
+                  Wholesale Parts <ArrowUpRight size={14} />
+                </span>
+              </Link>
             </button>
           </div>
         </header>

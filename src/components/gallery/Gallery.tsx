@@ -64,7 +64,7 @@ export default function GalleryPage() {
         <div className="max-w-[1400px] mx-auto border-l-4 border-black pl-6">
           <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
             Welcome <br />{" "}
-            <span className="text-blue-600">Luggage Gallery</span>
+            <span className="text-blue-400">Luggage Gallery</span>
           </h1>
           <p className="text-gray-500 mt-4 max-w-sm text-sm font-medium uppercase tracking-widest">
             High-performance repair standards.

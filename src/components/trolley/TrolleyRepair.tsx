@@ -47,7 +47,7 @@ export function TrolleyRepairSection() {
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1]">
               Is your luggage <br />
-              <span className="text-blue-600">hard to roll?</span>
+              <span className="text-blue-400">hard to roll?</span>
             </h2>
           </header>
 
@@ -77,7 +77,7 @@ export function TrolleyRepairSection() {
           <div className="pt-4">
             <a
               href="tel:+919430965836"
-              className="group inline-flex items-center gap-4 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-all shadow-xl shadow-slate-200"
+              className="group inline-flex items-center gap-4 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-400 transition-all shadow-xl shadow-slate-200"
             >
               Book a Repair{" "}
               <MoveRight

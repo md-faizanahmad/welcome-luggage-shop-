@@ -26,7 +26,7 @@ export default function ProductCatalogServer() {
           </p>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-neutral-900">
             WTR{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
               Solutions.
             </span>
           </h1>

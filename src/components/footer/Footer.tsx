@@ -22,7 +22,7 @@ export default function Footer() {
             <div>
               <h3 className="text-2xl font-black uppercase tracking-tighter text-gray-900">
                 Welcome Luggage <br />
-                <span className="text-blue-600">& Repairing Center</span>
+                <span className="text-blue-400">& Repairing Center</span>
               </h3>
               <p className="text-gray-500 mt-4 max-w-sm font-medium leading-relaxed">
                 Precision repairs and wholesale parts. Your trusted partner for
@@ -75,8 +75,26 @@ export default function Footer() {
                 Gaya, Bihar
               </p>
             </div>
-            <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-600 hover:gap-3 transition-all">
-              Get Directions <ArrowUpRight size={14} />
+            <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blue-400 hover:gap-3 transition-all">
+              <Link
+                href="https://www.google.com/maps/place/Welcome+Luggage+%26+Repairing+Center/@24.7970761,85.0061303,707m/data=!3m1!1e3!4m14!1m7!3m6!1s0x39f32b30ac38c101:0xe819c1eb6ae9ec9a!2sWelcome+Luggage+%26+Repairing+Center!8m2!3d24.7960991!4d85.0084257!16s%2Fg%2F11tmz80tj7!3m5!1s0x39f32b30ac38c101:0xe819c1eb6ae9ec9a!8m2!3d24.7960991!4d85.0084257!16s%2Fg%2F11tmz80tj7?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="flex items-center gap-2">
+                  Get Directions <ArrowUpRight size={14} />
+                </span>
+              </Link>
+            </button>
+            <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-yellow-600 hover:gap-3 transition-all">
+              <Link
+                href="https://g.page/r/CZrs6WrrwRnoEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                Leave a Review <ArrowUpRight size={14} />
+              </Link>
             </button>
           </div>
 
@@ -85,7 +103,7 @@ export default function Footer() {
             <div className="relative h-64 w-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl shadow-gray-200">
               <iframe
                 title="Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.1234!2d85.0000!3d24.7915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQ3JzI5LjQiTiA4NcKwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1175.3607219163011!2d85.00765672089497!3d24.79614705197356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f32b30ac38c101%3A0xe819c1eb6ae9ec9a!2sWelcome%20Luggage%20%26%20Repairing%20Center!5e1!3m2!1sen!2sin!4v1769359000639!5m2!1sen!2sin"
                 className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
                 loading="lazy"
               ></iframe>

@@ -33,7 +33,7 @@ export default function AboutSection() {
               </figcaption>
             </figure>
             {/* Decorative Blue Box */}
-            <div className="absolute -bottom-4 -right-4 w-2/3 h-2/3 bg-blue-600 rounded-[3rem] -z-0 hidden lg:block" />
+            <div className="absolute -bottom-4 -right-4 w-2/3 h-2/3 bg-green-500 rounded-[3rem] -z-0 hidden lg:block" />
           </div>
 
           <figure className="relative aspect-video rounded-[2rem] overflow-hidden border-4 border-white shadow-xl lg:-mt-20 lg:ml-auto lg:w-4/5 z-30 ring-1 ring-slate-100">
@@ -55,7 +55,7 @@ export default function AboutSection() {
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-[0.95] tracking-tighter">
               Crafting Trust <br />
-              <span className="text-blue-600">Since Dehri to Gaya.</span>
+              <span className="text-green-400">Since Dehri to Gaya.</span>
             </h2>
           </header>
 
