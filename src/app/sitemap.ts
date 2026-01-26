@@ -7,10 +7,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const LAST_MOD = new Date("2025-12-01");
 
   // Core indexable pages only
-  const routes = ["", "/about", "/services", "/accessories"].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: LAST_MOD,
-  }));
+  const routes = ["", "/about", "/services", "/accessories", "/wholesale"].map(
+    (route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: LAST_MOD,
+    }),
+  );
 
   // Service pages (important)
   const serviceRoutes = services.map((service) => ({

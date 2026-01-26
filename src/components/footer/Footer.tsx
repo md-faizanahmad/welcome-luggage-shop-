@@ -11,7 +11,7 @@ export default function Footer() {
       {/* Background Watermark Text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
         <span className="text-[18vw] font-black text-gray-100 leading-none uppercase tracking-tighter">
-          Welcome
+          WTR
         </span>
       </div>
 
@@ -44,7 +44,9 @@ export default function Footer() {
                   <div className="p-2 bg-gray-50 rounded-lg group-hover:bg-blue-50 transition-colors">
                     <Phone size={18} />
                   </div>
-                  <span className="font-bold">+91 94309 65836</span>
+                  <span className="font-bold text-green-600">
+                    +91 94309 65836
+                  </span>
                 </Link>
 
                 <Link
@@ -86,7 +88,7 @@ export default function Footer() {
                 </span>
               </Link>
             </button>
-            <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-yellow-600 hover:gap-3 transition-all">
+            <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-green-400 hover:gap-3 transition-all">
               <Link
                 href="https://g.page/r/CZrs6WrrwRnoEBM/review"
                 target="_blank"
