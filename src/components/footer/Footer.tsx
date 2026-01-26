@@ -118,6 +118,12 @@ export default function Footer() {
           <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
             © {currentYear} Welcome Luggage Center
           </p>
+          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+            Designed and Developed by{" "}
+            <a href="https://agency.mdfaizanahmad.in">
+              Md Faizan Ahmad Web Agency
+            </a>
+          </div>
           <div className="flex gap-8 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
             <Link
               href="#"
