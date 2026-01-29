@@ -5,23 +5,17 @@ import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/footer/Footer";
 import Script from "next/script";
 import FirebaseAnalytics from "@/components/FirebaseAnalytics/FirebaseAnalytics";
-import { DEFAULT_KEYWORDS } from "./keyword";
 import Loader from "@/shared/Loader";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://welcomeluggagerepair.shop"),
-  title: "Welcome Luggage & Repairing Center | Bag & Trolley Repair in Gaya",
+  title: "Luggage Repair Service Near You | Welcome Luggage Repair",
   other: {
     "google-adsense-account": "ca-pub-5188894530340921",
   },
   description:
     "Expert luggage repair in Gaya. We specialize in fixing bags, trolleys, zips, wheels, and handles at affordable prices. Visit Welcome Luggage & Repairing Center for reliable repair services.",
-  keywords: [
-    ...DEFAULT_KEYWORDS,
-    "luggage repairing service Gaya",
-    "trolley zip repair Gaya",
-    "wheel replacement Gaya",
-  ],
+
   verification: {
     google: "googleb0467f65887f6094.html", // Just the random string from Google
   },
