@@ -1,6 +1,27 @@
 import Image from "next/image";
 import { History, ShieldCheck, MapPin, Award, Star } from "lucide-react";
 import ShopImg from "@/assets/shop.jpg";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://welcomeluggagerepair.shop"),
+
+  title: "About Welcome Luggage Repair Center | Trusted Luggage Repair in Gaya",
+  description:
+    "Learn about Welcome Luggage Repair Center in Gaya — a trusted local shop providing reliable luggage, trolley bag, and suitcase repair services with years of hands-on experience.",
+
+  alternates: {
+    canonical: "/about",
+  },
+
+  keywords: [
+    "about welcome luggage repair",
+    "luggage repair shop gaya",
+    "trusted luggage repair gaya",
+    "trolley bag repair shop gaya",
+  ],
+};
+
 export default function AboutSection() {
   return (
     <article
