@@ -5,13 +5,8 @@ import ReviewSection from "@/components/reviews/Reviews";
 import ServicesClient from "@/components/whatwedo/WhatWeDoClient";
 import { ZipperReplacementSection } from "@/components/Zipper/ZipperReplacement";
 import { TrolleyRepairSection } from "@/components/trolley/TrolleyRepair";
-import { Metadata } from "next";
 import StatsCounter from "@/shared/ShopStats";
-export const metadata: Metadata = {
-  title: "Bag & Trolley Repair Shop in Gaya | Welcome Luggage Center",
-  description:
-    "Welcome Luggage & Repairing Center in Gaya offers expert trolley bag, suitcase, zip, wheel, and handle repair services. Affordable and trusted local shop.",
-};
+
 export default function HomeServer() {
   return (
     <div className="relative antialiased overflow-x-hidden">

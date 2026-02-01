@@ -2,9 +2,23 @@ import HomeServer from "@/components/home/HomeServer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Luggage Repair Service Near You | Welcome Luggage Repair",
+  metadataBase: new URL("https://welcomeluggagerepair.shop"),
+
+  title: "Luggage Repair in Gaya | Trolley Bag & Suitcase Repair Shop",
   description:
-    "Welcome Luggage & Repairing Center in Gaya offers expert trolley bag, suitcase, zip, wheel, and handle repair services. Affordable and trusted local shop.",
+    "Welcome Luggage Repair Center in Gaya offers trusted luggage, trolley bag, and suitcase repair services. Wheel, zip, handle fixing at affordable local prices.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  keywords: [
+    "luggage repair in gaya",
+    "trolley bag repair gaya",
+    "suitcase repair shop gaya",
+    "luggage wheel repair",
+    "zip handle repair luggage",
+  ],
 };
 
 export default function Home() {

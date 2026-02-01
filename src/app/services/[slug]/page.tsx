@@ -27,6 +27,7 @@ export const generateMetadata = async ({ params }: PageProps) => {
   return {
     title: `${service.title} | Welcome Luggage & Repairing Center`,
     description: service.description,
+
     content:
       "Expert luggage repair in Gaya. We specialize in fixing bags, trolleys, zips, wheels, and handles at affordable prices. Visit Welcome Luggage & Repairing Center for reliable repair services.",
     openGraph: {
