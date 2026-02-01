@@ -1,37 +1,71 @@
 [
   {
     "slug": "luggage",
-    "name": "Luggage Accessories",
-    "description": "All types of luggage accessories including wheels, handles, and covers.",
+    "name": "Luggage Accessories & Spare Parts",
+    "seoTitle": "Luggage Accessories & Spare Parts in Gaya | Wheels, Handles, Zips",
+    "description": "Buy and replace luggage spare parts in Gaya including trolley bag wheels, wheel runners, zip runners, handles, locks, and other luggage repair accessories. Suitable for suitcases and trolley bags of all brands.",
     "image": "/images/luggage-accessories.jpg",
     "parts": [
-      { "name": "Wheel Set", "price": 200, "image": "/images/wheel.jpg" },
-      { "name": "Handle Grip", "price": 150, "image": "/images/handle.jpg" }
+      {
+        "name": "Trolley Bag Wheel Set",
+        "price": 200,
+        "image": "/images/wheel.jpg"
+      },
+      {
+        "name": "Wheel Runner / Axle",
+        "price": 120,
+        "image": "/images/wheel-runner.jpg"
+      },
+      {
+        "name": "Luggage Handle Grip",
+        "price": 150,
+        "image": "/images/handle.jpg"
+      },
+      {
+        "name": "Luggage Zip Runner",
+        "price": 80,
+        "image": "/images/zipper.jpg"
+      }
     ]
   },
   {
     "slug": "bags",
-    "name": "Bags Accessories",
-    "description": "Backpack and travel bag accessories.",
+    "name": "Bag Accessories & Zip Repair Parts",
+    "seoTitle": "Bag Zip, Runner & Handle Repair Parts in Gaya | Travel & School Bags",
+    "description": "Find bag repair accessories in Gaya including zipper runners, zip sliders, bag handles, straps, and spare parts for school bags, office bags, backpacks, and travel bags.",
     "image": "/images/bags-accessories.jpg",
     "parts": [
-      { "name": "Zipper Pull", "price": 50, "image": "/images/zipper.jpg" },
-      { "name": "Bag Strap", "price": 100, "image": "/images/strap.jpg" }
+      {
+        "name": "Bag Zip Runner / Slider",
+        "price": 50,
+        "image": "/images/zipper.jpg"
+      },
+      {
+        "name": "Bag Handle",
+        "price": 120,
+        "image": "/images/bag-handle.jpg"
+      },
+      {
+        "name": "Bag Shoulder Strap",
+        "price": 100,
+        "image": "/images/strap.jpg"
+      }
     ]
   },
   {
     "slug": "covers",
-    "name": "Covers Accessories",
-    "description": "Custom covers for all luggage and bags.",
+    "name": "Luggage & Bag Covers",
+    "seoTitle": "Luggage & Trolley Bag Covers in Gaya | Plastic & Cloth Covers",
+    "description": "Protect your trolley bags and suitcases with high-quality luggage covers in Gaya. Plastic and cloth covers available for small, medium, and large luggage bags.",
     "image": "/images/covers-accessories.jpg",
     "parts": [
       {
-        "name": "Plastic Cover",
+        "name": "Plastic Luggage Cover",
         "price": 250,
         "image": "/images/plastic-cover.jpg"
       },
       {
-        "name": "Cloth Cover",
+        "name": "Cloth Luggage Cover",
         "price": 300,
         "image": "/images/cloth-cover.jpg"
       }
@@ -39,12 +73,21 @@
   },
   {
     "slug": "other",
-    "name": "Other Accessories",
-    "description": "Miscellaneous accessories for travel and bags.",
+    "name": "Locks, Tags & Other Travel Accessories",
+    "seoTitle": "Luggage Locks, Name Tags & Travel Accessories in Gaya",
+    "description": "Shop essential luggage accessories in Gaya including number locks, zipper locks, name tags, and other travel safety accessories available at Welcome Luggage Repair Center.",
     "image": "/images/other-accessories.jpg",
     "parts": [
-      { "name": "Name Tag", "price": 50, "image": "/images/name-tag.jpg" },
-      { "name": "Lock Set", "price": 120, "image": "/images/lock.jpg" }
+      {
+        "name": "Luggage Number Lock",
+        "price": 120,
+        "image": "/images/lock.jpg"
+      },
+      {
+        "name": "Luggage Name Tag",
+        "price": 50,
+        "image": "/images/name-tag.jpg"
+      }
     ]
   }
 ]
