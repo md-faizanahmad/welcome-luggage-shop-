@@ -106,7 +106,7 @@ This project focuses on:
 </p>
 
 <p align="center">
-  <img src="/screenshots/footer-desktop.png"
+  <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234644/wlr-footer_me3ynx.png"
        alt="Desktop footer design with structured business information"
        width="100%"/>
 </p>
