@@ -1,4 +1,4 @@
-<img src="/screenshots/Desktop-Header.png"
+<img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234616/wl_qkdrgr.png"
        alt="Desktop homepage layout with SEO optimized content and service sections"
        width="100%"/>
 
