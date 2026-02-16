@@ -1,6 +1,7 @@
- <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234616/wl_qkdrgr.png"
+<img src="/screenshots/Desktop-Header.png"
        alt="Desktop homepage layout with SEO optimized content and service sections"
        width="100%"/>
+
 <h1 align="center">🧳 Welcome Luggage & Repairing Center</h1>
 
 <p align="center">
@@ -84,15 +85,18 @@ This project focuses on:
 <h3>📱 Mobile Views</h3>
 
 <p align="center">
-  <img src="/screenshots/home-mobile.png"
+  <img src="/screenshots/Mobile-Home.png"
        alt="Mobile homepage showing luggage repair services with WhatsApp call to action"
-       width="260px"/>
-</p>
+       width="32"/>
 
-<p align="center">
-  <img src="/screenshots/footer-mobile.png"
-       alt="Mobile footer with contact details and location information"
-       width="260px"/>
+<img src="/screenshots/Mobile-Navbar.png"
+       alt="Mobile Navbar"
+       width="32"/>
+
+<img src="/screenshots/Mobile.png"
+       alt="Mobile Navbar"
+       width="32"/>
+
 </p>
 
 <br/>
@@ -100,14 +104,14 @@ This project focuses on:
 <h3>💻 Desktop Views</h3>
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234616/wl_qkdrgr.png"
+ <img src="/screenshots/Desktop-Header.png"
        alt="Desktop homepage layout with SEO optimized content and service sections"
        width="100%"/>
 </p>
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234644/wlr-footer_me3ynx.png"
-       alt="Desktop footer design with structured business information"
+ <img src="/screenshots/Desktop-Footer.png"
+       alt="Desktop Footer with all details and information"
        width="100%"/>
 </p>
 
