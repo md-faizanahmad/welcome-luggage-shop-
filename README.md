@@ -104,13 +104,13 @@ This project focuses on:
 <h3>💻 Desktop Views</h3>
 
 <p align="center">
- <img src="/screenshots/Desktop-Header.png"
+ <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234616/wl_qkdrgr.png"
        alt="Desktop homepage layout with SEO optimized content and service sections"
        width="100%"/>
 </p>
 
 <p align="center">
- <img src="/screenshots/Desktop-Footer.png"
+ <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234644/wlr-footer_me3ynx.png"
        alt="Desktop Footer with all details and information"
        width="100%"/>
 </p>
