@@ -85,15 +85,15 @@ This project focuses on:
 <h3>📱 Mobile Views</h3>
 
 <p align="center">
-  <img src="/screenshots/Mobile-Home.png"
+  <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150814_ym339n.png"
        alt="Mobile homepage showing luggage repair services with WhatsApp call to action"
        width="32"/>
 
-<img src="/screenshots/Mobile-Navbar.png"
+<img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150901_ncgyik.png"
        alt="Mobile Navbar"
        width="32"/>
 
-<img src="/screenshots/Mobile.png"
+<img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234802/Screenshot_20260216-150828_he35sd.png"
        alt="Mobile Navbar"
        width="32"/>
 
