@@ -116,11 +116,11 @@ The goal was simple:
 
 <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150814_ym339n.png"
      alt="Mobile homepage showing luggage repair services with WhatsApp call to action"
-     width="32%" />
+     width="32" />
 
 <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150901_ncgyik.png"
      alt="Mobile navigation"
-     width="32%" />
+     width="32" />
 
 
 </p>
