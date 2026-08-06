@@ -120,8 +120,7 @@ The goal was simple:
     style="border:1px solid #d1d9e0;border-radius:10px;padding:4px;margin:6px;"
   />
 
-  <img
-    src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150901_ncgyik.png"
+  <img   src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150901_ncgyik.png"
     alt="Mobile navigation"
     width="32%"
     style="border:1px solid #d1d9e0;border-radius:10px;padding:4px;margin:6px;"
