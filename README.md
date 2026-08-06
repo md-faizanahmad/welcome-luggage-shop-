@@ -122,11 +122,11 @@ The goal was simple:
      alt="Mobile navigation"
      width="32%" />
 
+
+</p>
 <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234802/Screenshot_20260216-150828_he35sd.png"
      alt="Mobile services section"
      width="32%" />
-
-</p>
 
 ---
 
