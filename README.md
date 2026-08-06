@@ -112,18 +112,24 @@ The goal was simple:
 
 ## 📱 Mobile Views
 
+
 <p align="center">
+  <img
+    src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150814_ym339n.png"
+    alt="Mobile homepage showing luggage repair services with WhatsApp call to action"
+    width="32%"
+    style="border:1px solid #d1d9e0;border-radius:10px;padding:4px;margin:6px;"
+  />
 
-<img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150814_ym339n.png"
-     alt="Mobile homepage showing luggage repair services with WhatsApp call to action"
-     width="32" />
-
-<img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150901_ncgyik.png"
-     alt="Mobile navigation"
-     width="32" />
-
-
+  <img
+    src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150901_ncgyik.png"
+    alt="Mobile navigation"
+    width="32%"
+    style="border:1px solid #d1d9e0;border-radius:10px;padding:4px;margin:6px;"
+  />
 </p>
+
+
 <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234802/Screenshot_20260216-150828_he35sd.png"
      alt="Mobile services section"
      width="32%" />
