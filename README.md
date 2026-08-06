@@ -12,7 +12,7 @@ Built with **Next.js 15** for performance, SEO visibility, and real-world lead g
 
 <p>
 <a href="https://welcomeluggagerepair.shop/" target="_blank">
-🌐 Live Demo
+🌐 Live 
 </a>
 </p>
 
