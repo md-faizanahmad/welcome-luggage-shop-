@@ -114,8 +114,7 @@ The goal was simple:
 
 
 <p align="center">
-  <img
-    src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150814_ym339n.png"
+  <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150814_ym339n.png"
     alt="Mobile homepage showing luggage repair services with WhatsApp call to action"
     width="32%"
     style="border:1px solid #d1d9e0;border-radius:10px;padding:4px;margin:6px;"
