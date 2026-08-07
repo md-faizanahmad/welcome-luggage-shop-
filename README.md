@@ -208,7 +208,7 @@ Bring a traditional luggage repair business online and generate local customer l
 
 <img
 src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150814_ym339n.png"
-width="31%"
+width="30%"
 alt="Homepage"
 />
 
@@ -218,11 +218,7 @@ width="31%"
 alt="Navigation"
 />
 
-<img
-src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234802/Screenshot_20260216-150828_he35sd.png"
-width="31%"
-alt="Services"
-/>
+
 
 </div>
 
