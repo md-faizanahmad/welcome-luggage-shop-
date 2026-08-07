@@ -1,215 +1,345 @@
 <div align="center">
 
 <img src="https://welcomeluggagerepair.shop/logo.png"
-     alt="WLR brand logo"
-     width="50%" />
+     alt="Welcome Luggage & Repairing Center Logo"
+     width="180"/>
 
-# 🧳 Welcome Luggage & Repairing Center.
+<h1>🧳 Welcome Luggage & Repairing Center</h1>
 
-### Production-Ready Local Business Website
-
-Built with **Next.js 15** for performance, SEO visibility, and real-world lead generation.
+<p>
+<b>Production-Ready Local Business Website</b><br>
+Built with <b>Next.js 15</b> for performance, SEO visibility, and real-world lead generation.
+</p>
 
 <p>
 <a href="https://welcomeluggagerepair.shop/" target="_blank">
-🌐 Live 
+🌐 Visit Live Website
 </a>
 </p>
 
 </div>
 
----
+<hr>
 
-# 📌 Project Overview
+<h2>📌 Project Overview</h2>
 
-Welcome Luggage & Repairing Center is a **high-performance web application** developed for a real offline luggage repair workshop in **Gaya, Bihar**.
+<p>
+<b>Welcome Luggage & Repairing Center</b> is a modern, SEO-optimized web application built for a real luggage repair workshop located in <b>Gaya, Bihar</b>.
+</p>
 
-The goal was simple:
+<blockquote>
+Bring a traditional luggage repair business online and generate local customer leads.
+</blockquote>
 
-> **Bring a traditional repair business online and generate local customer leads.**
-
-## Project Focus
-
-| Feature | Description |
-|---------|-------------|
-| 🔍 Local SEO | Optimized for Google search ranking |
-| 📱 Responsive UI | Mobile-first experience |
-| ⚡ Fast Performance | Optimized for low-bandwidth networks |
-| 💬 Lead Generation | Direct WhatsApp customer conversion |
-
----
-
-# 🚀 Tech Stack
+<h3>Project Goals</h3>
 
 <table>
 <tr>
-<td width="50%">
-
-### Frontend
-
-- Next.js 15 (App Router)
-- Server Components
-- Tailwind CSS
-- Framer Motion
-- Lucide React
-
-</td>
-
-<td width="50%">
-
-### SEO & Deployment
-
-- Metadata API
-- OpenGraph
-- Canonical URLs
-- JSON-LD (LocalBusiness Schema)
-- Vercel
-
-</td>
+<th>Focus</th>
+<th>Description</th>
 </tr>
+
+<tr>
+<td>🔍 Local SEO</td>
+<td>Improve Google search visibility for nearby customers.</td>
+</tr>
+
+<tr>
+<td>📱 Responsive Design</td>
+<td>Optimized experience across mobile, tablet, and desktop devices.</td>
+</tr>
+
+<tr>
+<td>⚡ Performance</td>
+<td>Fast loading with optimized assets and server rendering.</td>
+</tr>
+
+<tr>
+<td>💬 Lead Generation</td>
+<td>Direct customer communication through WhatsApp.</td>
+</tr>
+
 </table>
 
----
+<hr>
 
-# ⚡ Performance Architecture
-
-| ✔ Optimization | Purpose |
-|---------------|---------|
-| Server Components | Minimize client-side JavaScript |
-| Optimized Images | Faster loading |
-| Semantic HTML5 | Better crawlability |
-| Zero-JS FAQ (`<details>`) | Lightweight interaction |
-| Mobile-first Layout | Better mobile experience |
-
----
-
-# 📈 SEO & Local Optimization
-
-| SEO Feature | Included |
-|-------------|----------|
-| ✅ Structured Data | LocalBusiness JSON-LD |
-| ✅ Keyword Targeting | Service-based sections |
-| ✅ Google Maps Integration | Yes |
-| ✅ Click-to-Call | Yes |
-| ✅ WhatsApp CTA | Yes |
-| ✅ Optimized Meta Tags | Yes |
-
----
-
-# 🛠 Core Features
-
-| Feature | Description |
-|---------|-------------|
-| 🧳 Service Showcase | Wheel, zipper, handle & trolley repair |
-| 🏆 Legacy Story | Established in 2007 |
-| 📱 Responsive Design | Mobile, Tablet & Desktop |
-| 💬 Sticky WhatsApp Button | Quick customer contact |
-| 📍 Business Footer | Complete business information |
-
----
-
-# 📸 Interface Preview
-
-## 📱 Mobile Views
-
-
-<p align="center">
-  <img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150814_ym339n.png"
-    alt="Mobile homepage showing luggage repair services with WhatsApp call to action"
-    width="32%"
-    style="border:1px solid #d1d9e0;border-radius:10px;padding:4px;margin:6px;"
-  />
-
-  <img   src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150901_ncgyik.png"
-    alt="Mobile navigation"
-    width="32%"
-    style="border:1px solid #d1d9e0;border-radius:10px;padding:4px;margin:6px;"
-  />
-</p>
-
-
-<img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234802/Screenshot_20260216-150828_he35sd.png"
-     alt="Mobile services section"
-     width="32%" />
-
----
-
-## 💻 Desktop Views
-
-<p align="center">
-
-<img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234616/wl_qkdrgr.png"
-     alt="Desktop homepage layout with SEO optimized content and service sections"
-     width="100%" />
-
-<br/><br/>
-
-<img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234644/wlr-footer_me3ynx.png"
-     alt="Desktop footer with business information"
-     width="100%" />
-
-</p>
-
----
-
-# 💼 Business Impact
-
-| Result | Impact |
-|--------|--------|
-| 🌐 Digital Presence | Digitized a traditional offline workshop |
-| 📈 Local Visibility | Improved discoverability in Google search |
-| 💬 Faster Communication | Direct WhatsApp customer interaction |
-| 🚀 Future Ready | Scalable architecture for future expansion |
-
----
-
-# 📊 Project Highlights
+<h2>🚀 Technology Stack</h2>
 
 <table>
+
 <tr>
-<td align="center">
 
-### 🚀 Framework
+<td width="50%" valign="top">
 
-Next.js 15
+<h3>Frontend</h3>
 
-</td>
-
-<td align="center">
-
-### ⚡ Performance
-
-Optimized
-
-</td>
-
-<td align="center">
-
-### 🔍 SEO
-
-Local SEO Ready
+<ul>
+<li>Next.js 15 (App Router)</li>
+<li>React Server Components</li>
+<li>Tailwind CSS</li>
+<li>Framer Motion</li>
+<li>Lucide React</li>
+</ul>
 
 </td>
 
-<td align="center">
+<td width="50%" valign="top">
 
-### 📱 Responsive
+<h3>SEO & Deployment</h3>
 
-Mobile First
+<ul>
+<li>Metadata API</li>
+<li>Open Graph</li>
+<li>Canonical URLs</li>
+<li>JSON-LD LocalBusiness Schema</li>
+<li>Vercel Deployment</li>
+</ul>
 
 </td>
 
 </tr>
+
 </table>
 
----
+<hr>
+
+<h2>⚡ Performance Architecture</h2>
+
+<table>
+
+<tr>
+<th>Optimization</th>
+<th>Purpose</th>
+</tr>
+
+<tr>
+<td>Server Components</td>
+<td>Reduce client-side JavaScript.</td>
+</tr>
+
+<tr>
+<td>Optimized Images</td>
+<td>Improve loading speed.</td>
+</tr>
+
+<tr>
+<td>Semantic HTML5</td>
+<td>Increase accessibility and crawlability.</td>
+</tr>
+
+<tr>
+<td>Zero-JS FAQ</td>
+<td>Uses native HTML <code>&lt;details&gt;</code> elements.</td>
+</tr>
+
+<tr>
+<td>Mobile-First Layout</td>
+<td>Optimized for smartphones and slower networks.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>📈 SEO & Local Optimization</h2>
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Structured Data</td>
+<td>✅ LocalBusiness JSON-LD</td>
+</tr>
+
+<tr>
+<td>Keyword Optimization</td>
+<td>✅ Service-based content</td>
+</tr>
+
+<tr>
+<td>Google Maps</td>
+<td>✅ Integrated</td>
+</tr>
+
+<tr>
+<td>Click-to-Call</td>
+<td>✅ Enabled</td>
+</tr>
+
+<tr>
+<td>WhatsApp CTA</td>
+<td>✅ Included</td>
+</tr>
+
+<tr>
+<td>Meta Tags</td>
+<td>✅ Fully Optimized</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>🛠 Core Features</h2>
+
+<ul>
+<li>🧳 Luggage wheel repair</li>
+<li>🔧 Zipper replacement</li>
+<li>🎒 Handle & trolley repair</li>
+<li>🏆 Business established in 2007</li>
+<li>📱 Responsive mobile-first interface</li>
+<li>💬 Sticky WhatsApp contact button</li>
+<li>📍 Complete business information footer</li>
+<li>⚡ Fast loading pages</li>
+<li>🔍 SEO-friendly semantic markup</li>
+</ul>
+
+<hr>
+
+<h2>📸 Interface Preview</h2>
+
+<h3>📱 Mobile Screens</h3>
 
 <div align="center">
 
-# 👨‍💻 Developed by MFA Agency
+<img
+src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150814_ym339n.png"
+width="31%"
+alt="Homepage"
+/>
 
-**Performance • SEO • Conversion-Focused UI**
+<img
+src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234805/Screenshot_20260216-150901_ncgyik.png"
+width="31%"
+alt="Navigation"
+/>
 
-Modern Websites for Real Businesses
+<img
+src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234802/Screenshot_20260216-150828_he35sd.png"
+width="31%"
+alt="Services"
+/>
+
+</div>
+
+<br>
+
+<h3>💻 Desktop Screens</h3>
+
+<div align="center">
+
+<img
+src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234616/wl_qkdrgr.png"
+width="100%"
+alt="Desktop Homepage"
+/>
+
+<br><br>
+
+<img
+src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234644/wlr-footer_me3ynx.png"
+width="100%"
+alt="Footer"
+/>
+
+</div>
+
+<hr>
+
+<h2>📊 Business Impact</h2>
+
+<table>
+
+<tr>
+<th>Outcome</th>
+<th>Impact</th>
+</tr>
+
+<tr>
+<td>🌐 Digital Presence</td>
+<td>Successfully transformed a traditional offline workshop into an online business.</td>
+</tr>
+
+<tr>
+<td>📈 Local Visibility</td>
+<td>Improved discoverability through Google Search.</td>
+</tr>
+
+<tr>
+<td>💬 Customer Communication</td>
+<td>Faster interactions via WhatsApp.</td>
+</tr>
+
+<tr>
+<td>🚀 Scalability</td>
+<td>Architecture prepared for future growth.</td>
+</tr>
+
+</table>
+
+<hr>
+
+<h2>📌 Project Highlights</h2>
+
+<table>
+
+<tr>
+
+<th align="center">Framework</th>
+<th align="center">Performance</th>
+<th align="center">SEO</th>
+<th align="center">Responsive</th>
+
+</tr>
+
+<tr>
+
+<td align="center">Next.js 15</td>
+<td align="center">⚡ Optimized</td>
+<td align="center">🔍 Local SEO Ready</td>
+<td align="center">📱 Mobile First</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+<details>
+
+<summary><b>✨ Key Highlights</b></summary>
+
+<br>
+
+<ul>
+<li>Production-ready architecture</li>
+<li>SEO-focused content strategy</li>
+<li>Google-friendly semantic HTML</li>
+<li>Performance optimized with Server Components</li>
+<li>Responsive UI for all devices</li>
+<li>WhatsApp lead generation</li>
+<li>Modern UI with smooth animations</li>
+<li>Clean, scalable codebase</li>
+</ul>
+
+</details>
+
+<hr>
+
+<div align="center">
+
+<h2>👨‍💻 Developed by MFA Agency</h2>
+
+<p>
+<b>Performance • SEO • Conversion-Focused UI</b>
+</p>
+
+<p>
+Building modern, high-performance websites that help local businesses grow online.
+</p>
 
 </div>
