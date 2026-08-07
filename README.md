@@ -4,7 +4,7 @@
      alt="Desktop homepage layout with SEO optimized content and service sections"
      width="100%" />
 
-# 🧳 Welcome Luggage & Repairing Center
+# 🧳 Welcome Luggage & Repairing Center.
 
 ### Production-Ready Local Business Website
 
