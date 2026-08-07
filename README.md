@@ -1,7 +1,7 @@
 <div align="center">
 
 <img src="https://welcomeluggagerepair.shop/logo.png"
-     alt="Desktop homepage layout with SEO optimized content and service sections"
+     alt="WLR brand logo"
      width="100%" />
 
 # 🧳 Welcome Luggage & Repairing Center.
