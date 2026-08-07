@@ -2,7 +2,7 @@
 
 <img src="https://welcomeluggagerepair.shop/logo.png"
      alt="WLR brand logo"
-     width="100%" />
+     width="50%" />
 
 # 🧳 Welcome Luggage & Repairing Center.
 
