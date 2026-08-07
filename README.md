@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://res.cloudinary.com/dyefyrszz/image/upload/v1771234616/wl_qkdrgr.png"
+<img src="https://welcomeluggagerepair.shop/logo.png"
      alt="Desktop homepage layout with SEO optimized content and service sections"
      width="100%" />
 
