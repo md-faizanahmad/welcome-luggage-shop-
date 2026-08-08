@@ -8,7 +8,7 @@
 
 <p>
 <b>Production-Ready Local Business Website</b><br>
-Built with <b>Next.js 15</b> for performance, SEO visibility, Mobile and real-world lead generation.
+Built with <b>Next.js 15</b> for performance, SEO visibility, Mobile First and real-world lead generation.
 </p>
 
 <p>
