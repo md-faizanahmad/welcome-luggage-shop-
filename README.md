@@ -4,7 +4,7 @@
      alt="Welcome Luggage & Repairing Center Logo"
      width="180"/>
 
-<h3>🧳 Welcome Luggage & Repairing Center</h3>
+<h3>🧳 Welcome Luggage & Repairing Center.</h3>
 
 <p>
 <b>Production-Ready Local Business Website</b><br>
