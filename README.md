@@ -24,7 +24,7 @@ Built with <b>Next.js 15</b> for performance,SEO visibility,Mobile First and rea
 <h2>📌 Project Overview</h2>
 
 <p>
-<b>Welcome Luggage & Repairing Center</b> is a modern, SEO-optimized web application built for a real luggage repair workshop located in <b>Gaya, Bihar</b>.
+<b>Welcome Luggage & Repairing Center</b> is a modern, SEO-optimized web application built for a real luggage repair workshop located in <b>G.B Road Gaya, Bihar</b>.
 </p>
 
 <blockquote>
