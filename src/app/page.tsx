@@ -1,4 +1,4 @@
-import HomeServer from "@/components/home/HomeServer";
+import HomePages from "@/components/home/HomePages";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,5 +22,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomeServer />;
+  return <HomePages />;
 }

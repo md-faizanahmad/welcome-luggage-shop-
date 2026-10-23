@@ -1,4 +1,3 @@
-// components/home/HomeServer.tsx
 import Hero from "@/components/hero/Hero";
 import ProductCatalogServer from "@/components/productcatalog/ProductCatalogServer";
 import ReviewSection from "@/components/reviews/Reviews";
@@ -7,7 +6,7 @@ import { ZipperReplacementSection } from "@/components/Zipper/ZipperReplacement"
 import { TrolleyRepairSection } from "@/components/trolley/TrolleyRepair";
 import StatsCounter from "@/shared/ShopStats";
 
-export default function HomeServer() {
+export default function HomePages() {
   return (
     <div className="relative antialiased overflow-x-hidden">
       {/* Client-only scroll animation */}
