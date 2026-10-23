@@ -5,6 +5,9 @@
   --brand-red: #e31e24;
   --brand-red-dark: #b9151b;
   --brand-red-light: #fff1f1;
+  --brand-green: #16a34a;
+  --brand-green-dark: #15803d;
+  --brand-green-light: #dcfce7;
 
   --brand-navy: #0b2345;
   --brand-navy-light: #163b68;
@@ -48,6 +51,10 @@
   --color-brand-red: var(--brand-red);
   --color-brand-red-dark: var(--brand-red-dark);
   --color-brand-red-light: var(--brand-red-light);
+
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-dark: var(--brand-green-dark);
+  --color-brand-green-light: var(--brand-green-light);
 
   --color-brand-navy: var(--brand-navy);
   --color-brand-navy-light: var(--brand-navy-light);
