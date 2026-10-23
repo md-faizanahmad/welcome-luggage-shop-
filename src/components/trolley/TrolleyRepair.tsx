@@ -1,88 +1,97 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Settings, CheckCircle2, MoveRight } from "lucide-react";
 
+const repairServices = [
+  "Trolley ke pahiye badalna",
+  "Handle ki marammat",
+  "Lock theek karna",
+  "Bag ke body ki marammat",
+];
+
 export function TrolleyRepairSection() {
   return (
-    <section className="py-20 px-6 lg:px-12 bg-white w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-        {/* Visual Side */}
+    <section className="w-full overflow-hidden bg-white px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-14">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-7 sm:gap-9 lg:grid-cols-2 lg:gap-12">
+        {/* Repair Image */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative group"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="group relative mx-auto w-full max-w-sm lg:max-w-none"
         >
-          {/* Decorative background element */}
-          <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute -left-3 -top-3 h-16 w-16 rounded-full bg-brand-red-light opacity-70 blur-2xl sm:h-20 sm:w-20" />
 
-          <div className="relative h-[400px] md:h-[550px] w-full rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+          <div className="relative h-[230px] w-full overflow-hidden rounded-2xl border border-border shadow-lg sm:h-[300px] sm:rounded-3xl md:h-[340px] lg:h-[380px]">
             <Image
               src="/Trolley_Repair.png"
-              alt="Close up of suitcase wheels and handle repair"
+              alt="Trolley bag ke pahiye aur handle ki marammat"
               fill
-              sizes="(max-width: 1024px) 100vw, 600px"
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 80vw, 50vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            {/* Status Badge */}
-            <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md px-6 py-3 rounded-2xl shadow-lg">
-              <p className="text-blue-600 font-bold text-sm">
-                Spare Parts in Stock
+
+            {/* Parts Badge */}
+            <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/50 bg-white/90 px-3 py-2 shadow-md backdrop-blur-sm sm:bottom-4 sm:left-4 sm:right-auto sm:px-4 sm:py-3">
+              <p className="text-xs font-bold text-brand-red sm:text-sm">
+                Zaroori parts uplabdh hain
               </p>
-              <p className="text-gray-900 text-xs font-medium">
-                Wheels, Handles & Locks
+              <p className="mt-0.5 text-[11px] font-medium text-brand-navy sm:text-xs">
+                Pahiye, handle aur lock
               </p>
             </div>
           </div>
         </motion.div>
 
-        {/* Text Side */}
-        <div className="space-y-8">
+        {/* Repair Details */}
+        <div className="min-w-0">
           <header>
-            <div className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm uppercase tracking-[0.2em] mb-4">
-              <Settings size={18} className="animate-spin-slow" /> Engineering
-              Quality
+            <div className="mb-2 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-red sm:mb-3 sm:text-sm">
+              <Settings size={16} />
+              Bharosemand marammat
             </div>
-            <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1]">
-              Is your luggage <br />
-              <span className="text-blue-400">hard to roll?</span>
+
+            <h2 className="text-2xl font-black leading-tight tracking-tight text-brand-navy sm:text-3xl md:text-4xl lg:text-[2.65rem]">
+              Trolley bag ke pahiye ya handle{" "}
+              <span className="text-brand-red">kharab ho gaye hain?</span>
             </h2>
           </header>
 
-          <p className="text-lg text-slate-600 leading-relaxed max-w-xl">
-            From cracked shells to jammed telescopic handles, we restore your
-            travel gear to factory condition. Specializing in high-performance
-            wheel alignments and heavy-duty hardware replacement.
+          <p className="mt-3 max-w-xl text-sm leading-6 text-text-muted sm:mt-4 sm:text-base sm:leading-7">
+            Toota hua body, atakta hua handle ya kharab pahiye — hum aapke
+            trolley bag ki marammat karte hain. Zaroorat ke hisaab se parts
+            badal kar aapke bag ko phir se istemal ke layak banate hain.
           </p>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              "Spinner Wheel Swap",
-              "Telescopic Fix",
-              "TSA Lock Reset",
-              "Body Patching",
-            ].map((item) => (
+          {/* Services List */}
+          <ul className="mt-4 grid grid-cols-1 gap-2.5 sm:mt-5 sm:grid-cols-2 sm:gap-3">
+            {repairServices.map((item) => (
               <li
                 key={item}
-                className="flex items-center gap-3 text-slate-700 font-semibold"
+                className="flex min-w-0 items-start gap-2.5 text-sm font-semibold text-brand-navy sm:text-base"
               >
-                <CheckCircle2 size={20} className="text-blue-500" />
-                {item}
+                <CheckCircle2
+                  size={18}
+                  className="mt-0.5 shrink-0 text-brand-red"
+                />
+                <span>{item}</span>
               </li>
             ))}
           </ul>
 
-          <div className="pt-4">
+          {/* Call Button */}
+          <div className="mt-5 sm:mt-6">
             <a
               href="tel:+919430965836"
-              className="group inline-flex items-center gap-4 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-400 transition-all shadow-xl shadow-slate-200"
+              className="group inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-brand-red px-5 py-3 text-sm font-bold text-white shadow-md transition-colors hover:bg-brand-red-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red sm:w-auto sm:px-6 sm:text-base"
             >
-              Book a Repair{" "}
+              Marammat ke liye call karein
               <MoveRight
-                size={20}
-                className="group-hover:translate-x-2 transition-transform"
+                size={18}
+                className="transition-transform group-hover:translate-x-1"
               />
             </a>
           </div>
