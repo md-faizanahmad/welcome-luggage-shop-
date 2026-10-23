@@ -63,7 +63,7 @@ export default function DesktopNavbar() {
       {/* Desktop Navbar */}
       <nav
         className={`fixed inset-x-0 top-0 z-[100] hidden transition-all duration-300 md:block ${
-          scrolled ? "bg-white py-2 shadow-md" : "bg-white/95 py-4"
+          scrolled ? "bg-white py-2 shadow-md" : "bg-white/65 py-2"
         }`}
       >
         <div
@@ -72,7 +72,7 @@ export default function DesktopNavbar() {
           }`}
         >
           <div
-            className={`relative flex h-16 items-center justify-between rounded-2xl px-6 transition-all duration-500 ${
+            className={`relative flex h-16 items-center justify-between rounded-sm px-6 transition-all duration-500 ${
               scrolled
                 ? "border border-border bg-white shadow-sm"
                 : "border border-transparent bg-transparent"
