@@ -1,6 +1,6 @@
-import { ShieldCheck, ArrowUpRight, MapPin, Package } from "lucide-react";
+import { ArrowUpRight, MapPin, Package } from "lucide-react";
 import Link from "next/link";
-import HeroClient from "./HeroClient";
+import ItemsShowcase from "./ItemsShowcase";
 
 const seoContent = {
   title: "Welcome Luggage & Repairing Center",
@@ -83,7 +83,7 @@ export default function Hero() {
 
         {/* Supporting Service Highlights */}
         <div className="relative z-10 hidden lg:block">
-          <HeroClient />
+          <ItemsShowcase />
         </div>
       </div>
     </section>
