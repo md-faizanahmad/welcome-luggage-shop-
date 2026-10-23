@@ -19,7 +19,7 @@ export default function HomePages() {
       <TrolleyRepairSection />
       <ZipperReplacementSection />
 
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-8 md:py-24 ">
         <div className="max-w-7xl mx-auto">
           <StatsCounter />
         </div>
