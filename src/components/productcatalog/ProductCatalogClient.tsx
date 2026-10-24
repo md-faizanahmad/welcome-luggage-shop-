@@ -34,10 +34,18 @@ export default function ProductCatalogClient({
         <div
           key={product.id}
           className="
-            w-[88vw] max-w-[380px] shrink-0 snap-start
-            sm:w-[72vw] sm:max-w-[420px]
-            md:w-auto md:max-w-none
-          "
+    /* Mobile: larger images */
+    w-[80vw] max-w-[320px] shrink-0 snap-start
+
+    /* Small tablets */
+    sm:w-[65vw] sm:max-w-[350px]
+
+    /* Desktop: smaller images */
+    md:w-auto md:max-w-[300px]
+
+    /* Large desktop */
+    xl:max-w-[280px]
+  "
         >
           <ProductCard product={product} />
         </div>
