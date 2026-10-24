@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { useRef, useState } from "react";
 
 const WhatWeDoList = [
   {
@@ -30,15 +33,64 @@ const WhatWeDoList = [
 ];
 
 export default function WhatWeDoServer() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const cards = Array.from(container.children) as HTMLElement[];
+    if (!cards.length) return;
+
+    const containerCenter =
+      container.getBoundingClientRect().left +
+      container.getBoundingClientRect().width / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    cards.forEach((card, index) => {
+      const cardCenter =
+        card.getBoundingClientRect().left +
+        card.getBoundingClientRect().width / 2;
+
+      const distance = Math.abs(containerCenter - cardCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    setActiveIndex(closestIndex);
+  };
+
+  const scrollToService = (index: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const card = container.children[index] as HTMLElement | undefined;
+
+    card?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+
+    setActiveIndex(index);
+  };
+
   return (
     <section className="overflow-hidden bg-transparent py-6 sm:py-8 md:py-10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         {/* Header */}
-        <div className="mb-6 flex flex-col justify-between gap-2  md:flex-row md:items-end md:gap-4 lg:mb-2 sm:mb-4">
+        <div className="mb-6 flex flex-col justify-between gap-2 sm:mb-4 md:flex-row md:items-end md:gap-4 lg:mb-2">
           <div>
             <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-red sm:text-xs sm:tracking-[0.3em]">
               Services
             </span>
+
             <h2 className="mt-1.5 text-2xl font-black uppercase leading-tight tracking-tight text-brand-navy sm:mt-0.5 sm:text-3xl md:text-4xl lg:text-4xl">
               Hum Kya Karte Hain ?
             </h2>
@@ -51,7 +103,19 @@ export default function WhatWeDoServer() {
 
         {/* Responsive service cards */}
         <div
-          className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden px-4 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-6 sm:gap-5 sm:px-6 md:mx-0 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-4"
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="
+            -mx-4 flex snap-x snap-mandatory gap-4
+            overflow-x-auto overflow-y-hidden overscroll-x-contain
+            px-4 pb-5
+            [scrollbar-width:none]
+            [&::-webkit-scrollbar]:hidden
+            sm:-mx-6 sm:gap-5 sm:px-6
+            md:mx-0 md:grid md:grid-cols-2
+            md:gap-5 md:overflow-visible md:px-0 md:pb-0
+            lg:grid-cols-4
+          "
           aria-label="Our services"
         >
           {WhatWeDoList.map((service) => (
@@ -100,16 +164,19 @@ export default function WhatWeDoServer() {
           ))}
         </div>
 
-        {/* Mobile pagination indicators */}
-        <div
-          className="mt-1 flex items-center justify-center gap-2 md:hidden"
-          aria-hidden="true"
-        >
+        {/* Interactive mobile pagination dots */}
+        <div className="mt-1 flex items-center justify-center gap-2 md:hidden">
           {WhatWeDoList.map((service, index) => (
-            <span
+            <button
               key={service.title}
-              className={`h-2 w-2 rounded-full ${
-                index === 0 ? "bg-brand-red" : "bg-border"
+              type="button"
+              onClick={() => scrollToService(index)}
+              aria-label={`Show ${service.title}`}
+              aria-current={activeIndex === index ? "true" : undefined}
+              className={`h-2.5 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 ${
+                activeIndex === index
+                  ? "w-7 bg-brand-red"
+                  : "w-2.5 bg-brand-navy/20 hover:bg-brand-red/50"
               }`}
             />
           ))}
