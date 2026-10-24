@@ -14,17 +14,14 @@ export default function HomePages() {
       <section className="relative w-full overflow-hidden">
         <Hero />
       </section>
-
       <ServicesClient />
       <TrolleyRepairSection />
       <ZipperReplacementSection />
-
       <section className="py-8 md:py-24 ">
         <div className="max-w-7xl mx-auto">
           <StatsCounter />
         </div>
       </section>
-
       <ProductCatalogServer />
 
       <section className="py-20 rounded-t-[3rem] md:rounded-t-[5rem]">
