@@ -30,7 +30,7 @@ const StatItem = ({ item }: { item: (typeof stats)[number] }) => {
 
   return (
     <div className="flex min-w-[190px] items-center gap-3  px-4 py-3 sm:min-w-[220px] sm:gap-4 sm:px-5 sm:py-4">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-red-light text-brand-red sm:h-12 sm:w-12 sm:rounded-xl">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center text-brand-red sm:h-12 sm:w-12 sm:rounded-xl">
         <Icon size={20} strokeWidth={2} className="sm:hidden" />
         <Icon size={23} strokeWidth={2} className="hidden sm:block" />
       </div>
@@ -71,7 +71,7 @@ export default function StatsCounter() {
           </p>
 
           <h2 className="mt-1 text-xl font-black tracking-tight text-brand-navy sm:text-2xl md:text-3xl">
-            Tajurba jo bharosa dilaye
+            Experienced jo bharosa dilaye
           </h2>
         </div>
 
@@ -92,7 +92,7 @@ export default function StatsCounter() {
                 ? undefined
                 : {
                     x: {
-                      duration: 28,
+                      duration: 30,
                       ease: "linear",
                       repeat: Infinity,
                     },
