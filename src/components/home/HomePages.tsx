@@ -25,17 +25,7 @@ export default function HomePages() {
         </div>
       </section>
 
-      <section className="py-12 md:py-20">
-        <div className="max-w-[1400px] mx-auto px-4">
-          <div className="mb-12 border-l-4 border-blue-600 pl-6">
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter">
-              Premium Parts <br />
-              <span className="text-slate-400">& Inventory</span>
-            </h2>
-          </div>
-          <ProductCatalogServer />
-        </div>
-      </section>
+      <ProductCatalogServer />
 
       <section className="py-20 rounded-t-[3rem] md:rounded-t-[5rem]">
         <div className="max-w-7xl mx-auto px-4">
