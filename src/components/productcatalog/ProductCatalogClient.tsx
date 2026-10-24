@@ -18,15 +18,15 @@ export default function ProductCatalogClient({
   return (
     <div
       className="
-        -mx-4 flex snap-x snap-mandatory gap-3
-        overflow-x-auto overflow-y-hidden
-        px-4 pb-2
+        -mx-4 flex snap-x snap-mandatory gap-4
+        overflow-x-auto overscroll-x-contain
+        px-4 pb-3
         [scrollbar-width:none]
         [&::-webkit-scrollbar]:hidden
-        sm:-mx-6 sm:gap-4 sm:px-6
+        sm:-mx-6 sm:gap-5 sm:px-6
         md:mx-0 md:grid md:grid-cols-2
-        md:gap-5 md:overflow-visible md:px-0 md:pb-0
-        xl:grid-cols-3 xl:gap-6
+        md:gap-6 md:overflow-visible md:px-0 md:pb-0
+        xl:grid-cols-3 xl:gap-7
       "
       aria-label="Hamari services"
     >
@@ -34,8 +34,8 @@ export default function ProductCatalogClient({
         <div
           key={product.id}
           className="
-            w-[82vw] max-w-[320px] shrink-0 snap-start
-            sm:w-[70vw] sm:max-w-[360px]
+            w-[88vw] max-w-[380px] shrink-0 snap-start
+            sm:w-[72vw] sm:max-w-[420px]
             md:w-auto md:max-w-none
           "
         >
