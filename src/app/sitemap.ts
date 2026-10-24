@@ -3,7 +3,7 @@ import { services } from "@/data/services";
 import accessoriesData from "@/data/accessories.json";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.welcomeluggagerepair.shop";
+  const baseUrl = "https://www.welcomerepair.vercel.app";
   const LAST_MOD = new Date("2025-12-01");
 
   // Core indexable pages only
