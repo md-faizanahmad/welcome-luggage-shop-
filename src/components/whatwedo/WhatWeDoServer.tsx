@@ -126,9 +126,9 @@ export default function WhatWeDoServer() {
               <Link
                 href={service.link}
                 aria-label={`${service.title}: ${service.desc}`}
-                className="group relative block h-full rounded-[1.75rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red sm:rounded-[2rem] lg:rounded-[2.5rem]"
+                className="group relative block h-full  focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red "
               >
-                <div className="relative h-[300px] w-full overflow-hidden rounded-[1.75rem] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-2xl group-hover:shadow-brand-navy/10 sm:h-[340px] sm:rounded-[2rem] md:h-[360px] lg:h-[320px] xl:h-[360px]">
+                <div className="relative h-[300px] w-full overflow-hidden  transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-2xl group-hover:shadow-brand-navy/5 sm:h-[340px]  md:h-[360px] lg:h-[320px] xl:h-[360px]">
                   {/* Service image */}
                   <div className="absolute inset-0 flex items-center justify-center p-6 transition-transform duration-500 group-hover:scale-105 sm:p-8 lg:p-6 xl:p-8">
                     <Image
