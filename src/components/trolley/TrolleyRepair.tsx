@@ -25,7 +25,7 @@ export function TrolleyRepairSection() {
         >
           <div className="absolute -left-3 -top-3 h-16 w-16 rounded-full bg-brand-red-light opacity-70 blur-2xl sm:h-20 sm:w-20" />
 
-          <div className="relative h-[230px] w-full overflow-hidden rounded-2xl border border-border shadow-lg sm:h-[300px] sm:rounded-3xl md:h-[340px] lg:h-[380px]">
+          <div className="relative h-[230px] w-full overflow-hidden  border border-border shadow-lg sm:h-[300px]  md:h-[340px] lg:h-[380px]">
             <Image
               src="/Trolley_Repair.png"
               alt="Trolley bag ke pahiye aur handle ki marammat"
@@ -35,7 +35,7 @@ export function TrolleyRepairSection() {
             />
 
             {/* Parts Badge */}
-            <div className="absolute bottom-3 left-3 right-3 rounded-xl border border-white/50 bg-white/90 px-3 py-2 shadow-md backdrop-blur-sm sm:bottom-4 sm:left-4 sm:right-auto sm:px-4 sm:py-3">
+            <div className="absolute bottom-3 left-3 right-3  bg-white/80 px-3 py-2 shadow-md backdrop-blur-sm sm:bottom-4 sm:left-4 sm:right-auto sm:px-4 sm:py-3">
               <p className="text-xs font-bold text-brand-red sm:text-sm">
                 Zaroori parts uplabdh hain
               </p>
