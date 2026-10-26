@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
 import Img1 from "@/assets/gallery/shop.jpg";
@@ -36,113 +36,165 @@ const GALLERY_ITEMS = [
   {
     id: 4,
     title: "Vintage Leather",
-    cat: "Luxury",
+    cat: "Leather Repair",
     src: Img4,
     grid: "md:col-span-2 md:row-span-1",
   },
   {
     id: 5,
     title: "Wheel System",
-    cat: "Internal",
+    cat: "Wheels",
     src: Img5,
     grid: "md:col-span-1 md:row-span-1",
   },
   {
     id: 6,
     title: "Travel Ready",
-    cat: "Final",
+    cat: "Final Check",
     src: Img6,
     grid: "md:col-span-1 md:row-span-1",
   },
 ];
 
 export default function GalleryPage() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <main className="min-h-screen bg-white p-5">
-      {/* Tight, Impactful Header */}
-      <section className="pt-20 pb-10 px-4">
-        <div className="max-w-[1400px] mx-auto border-l-4 border-black pl-6">
-          <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
-            Welcome <br />{" "}
-            <span className="text-blue-400">Luggage Gallery</span>
+    <main className="min-h-screen overflow-hidden bg-white text-gray-900">
+      {/* Page heading */}
+      <section className="px-5 pb-7 pt-24 sm:px-6 sm:pt-10 md:pb-9">
+        <div className="mx-auto max-w-7xl border-l-[3px] border-black pl-4 sm:pl-5">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-gray-500">
+            Our Work
+          </p>
+
+          <h1 className="text-3xl font-bold uppercase leading-tight tracking-tight sm:text-4xl md:text-5xl">
+            Welcome
+            <br />
+            <span className="text-brand-navy-light">Luggage Gallery</span>
           </h1>
-          <p className="text-gray-500 mt-4 max-w-sm text-sm font-medium uppercase tracking-widest">
-            High-performance repair standards.
+
+          <p className="mt-3 max-w-md text-sm leading-6 text-gray-600">
+            A look at luggage repairs, replacement parts, and everyday workshop
+            work.
           </p>
         </div>
       </section>
 
-      {/* MOBILE: Edge-to-Edge Swipe Experience */}
-      <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory no-scrollbar bg-black">
-        {GALLERY_ITEMS.map((item) => (
-          <div
-            key={item.id}
-            className="snap-center shrink-0 w-[82vw] h-[50vh] relative border-r border-white/10"
-          >
-            <Image
-              src={item.src}
-              alt={item.title}
-              fill
-              className="object-cover opacity-80"
-            />
-            <div className="absolute bottom-10 left-8 right-8">
-              <span className="text-blue-500 text-xs font-bold uppercase tracking-[0.2em]">
-                {item.cat}
-              </span>
-              <h3 className="text-white text-3xl font-bold mt-1 tracking-tight">
-                {item.title}
-              </h3>
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Mobile: horizontal swipe gallery */}
+      <section aria-label="Luggage repair gallery" className="md:hidden">
+        <div className="mb-3 flex items-center justify-between px-5">
+          <h2 className="text-sm font-semibold text-gray-900">
+            Workshop Gallery
+          </h2>
+          <span className="text-xs text-gray-500">Swipe to explore →</span>
+        </div>
 
-      {/* DESKTOP: Flush Professional Bento Grid */}
-      <section className="hidden md:block px-4 pb-20">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-4 auto-rows-[300px] gap-2">
-          {GALLERY_ITEMS.map((item, idx) => (
-            <motion.div
+        <div className="no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain px-5 pb-4">
+          {GALLERY_ITEMS.map((item, index) => (
+            <article
               key={item.id}
-              whileHover={{ y: -5 }}
-              className={`relative overflow-hidden group bg-gray-100 ${item.grid}`}
+              className="relative h-[340px] w-[82vw] max-w-[340px] shrink-0 snap-start overflow-hidden bg-gray-100 sm:h-[390px] sm:w-[70vw]"
             >
-              {/* Image with subtle zoom on hover */}
               <Image
                 src={item.src}
                 alt={item.title}
                 fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                priority={index === 0}
+                sizes="(max-width: 640px) 82vw, 70vw"
+                className="object-cover"
               />
 
-              {/* Minimalist Overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex flex-col justify-end p-8">
-                <div className="translate-y-10 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-blue-400 text-xs font-bold uppercase tracking-[0.3em]">
-                    {item.cat}
-                  </span>
-                  <h3 className="text-white text-2xl font-bold tracking-tight mt-1">
-                    {item.title}
-                  </h3>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
 
-              {/* Top-Right Index Number for "Gallery" look */}
-              <div className="absolute top-6 right-6 text-white/50 text-xs font-mono group-hover:text-white transition-colors">
-                /0{idx + 1}
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <span className="text-xs font-semibold uppercase tracking-wider text-blue-300">
+                  {item.cat}
+                </span>
+
+                <h3 className="mt-1 text-xl font-semibold leading-snug text-white">
+                  {item.title}
+                </h3>
+
+                <span className="mt-3 block text-xs text-white/70">
+                  Work #{String(item.id).padStart(2, "0")}
+                </span>
               </div>
-            </motion.div>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* Modern Contact Strip - No extra padding/space */}
-      <div className="bg-black py-6">
-        <div className="max-w-[1400px] mx-auto px-4 flex justify-between items-center text-white/40 text-[10px] font-bold uppercase tracking-[0.4em]">
-          <span>Quality Materials</span>
-          <span>Expert Craftsmanship</span>
-          <span className="text-blue-500">Book Repair</span>
+      {/* Desktop and tablet: original bento layout */}
+      <section
+        aria-label="Luggage repair work"
+        className="hidden px-5 pb-12 md:block lg:px-6 lg:pb-16"
+      >
+        <div className="mx-auto grid max-w-7xl auto-rows-[210px] grid-cols-3 gap-2 lg:auto-rows-[250px] lg:grid-cols-4">
+          {GALLERY_ITEMS.map((item, index) => (
+            <motion.article
+              key={item.id}
+              whileHover={shouldReduceMotion ? undefined : { y: -2 }}
+              transition={{ duration: 0.2 }}
+              className={`group relative min-w-0 overflow-hidden bg-gray-100 ${item.grid}`}
+            >
+              <Image
+                src={item.src}
+                alt={item.title}
+                fill
+                priority={index === 0}
+                sizes={
+                  item.id === 1 || item.id === 4
+                    ? "(min-width: 1024px) 50vw, 66vw"
+                    : "(min-width: 768px) 33vw, 25vw"
+                }
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent transition-colors duration-200 group-hover:from-black/85" />
+
+              <div className="absolute inset-x-0 bottom-0 p-4 lg:p-5">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-300">
+                  {item.cat}
+                </span>
+
+                <h3 className="mt-1 text-lg font-semibold leading-snug text-white lg:text-xl">
+                  {item.title}
+                </h3>
+              </div>
+
+              <span className="absolute right-3 top-3 text-xs font-medium text-white/80">
+                /{String(index + 1).padStart(2, "0")}
+              </span>
+            </motion.article>
+          ))}
         </div>
-      </div>
+      </section>
+
+      {/* Simple workshop footer strip */}
+      <section className="bg-black px-5 py-5 text-white sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-3">
+          <span className="text-xs font-medium text-white/70">
+            Quality Materials
+          </span>
+
+          <span className="text-xs font-medium text-white/70">
+            Skilled Repairs
+          </span>
+
+          <a
+            href="https://wa.me/919430965836"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-10 items-center text-xs font-semibold text-blue-400 transition-colors hover:text-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
+          >
+            Enquire About a Repair{" "}
+            <span className="ml-1" aria-hidden="true">
+              →
+            </span>
+          </a>
+        </div>
+      </section>
     </main>
   );
 }
