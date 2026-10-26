@@ -21,15 +21,17 @@ interface PageProps {
 
 export const generateMetadata = async ({ params }: PageProps) => {
   const { slug } = await params;
-  const service = services.find((s) => s.slug === slug);
-  if (!service) return { title: "Service Not Found" };
+  const service = services.find((item) => item.slug === slug);
+
+  if (!service) {
+    return {
+      title: "Service Not Found | Welcome Luggage & Repairing Center",
+    };
+  }
 
   return {
     title: `${service.title} | Welcome Luggage & Repairing Center`,
     description: service.description,
-
-    content:
-      "Expert luggage repair in Gaya. We specialize in fixing bags, trolleys, zips, wheels, and handles at affordable prices. Visit Welcome Luggage & Repairing Center for reliable repair services.",
     openGraph: {
       title: `${service.title} | Welcome Luggage & Repairing Center`,
       description: service.description,
@@ -42,73 +44,110 @@ export const generateMetadata = async ({ params }: PageProps) => {
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
-  const service: Service | undefined = services.find((s) => s.slug === slug);
+  const service: Service | undefined = services.find(
+    (item) => item.slug === slug,
+  );
 
   if (!service) {
-    return {
-      title: "Service Not Found | Welcome Luggage & Repairing Center",
-      description:
-        "The requested service could not be found. Contact Welcome Luggage & Repairing Center in Gaya for luggage and trolley repair services.",
-    };
+    return (
+      <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+        <h1 className="text-xl font-semibold text-gray-900">
+          Service not found
+        </h1>
+        <p className="mt-2 text-sm leading-6 text-gray-600">
+          This service may no longer be available. Please contact Welcome
+          Luggage & Repairing Center in Gaya for assistance.
+        </p>
+      </main>
+    );
   }
 
   return (
-    <main className="max-w-6xl mx-auto px-4 pt-10 pb-10 ">
-      {/* Hero Section: Compact for Mobile */}
-      <section className="flex flex-col md:flex-row items-center gap-6 mb-10">
-        <div className="w-full md:w-1/2">
-          <div className="relative aspect-video md:aspect-square max-h-[300px] md:max-h-full w-full">
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              className="rounded-2xl shadow-md object-cover"
-              priority
-            />
-          </div>
+    <main className="mx-auto max-w-6xl px-4 pb-12 pt-24 sm:px-6 sm:pt-28">
+      {/* Service information */}
+      <section className="mb-10 grid grid-cols-1 gap-5 sm:gap-7 md:grid-cols-2 md:items-center">
+        <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+          <Image
+            src={service.image}
+            alt={service.title}
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
         </div>
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <h1 className="text-3xl md:text-4xl font-bold text-blue-700 leading-tight">
+
+        <div className="py-1 md:py-4">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+            Our Services
+          </p>
+
+          <h1 className="text-2xl font-bold leading-tight tracking-tight text-gray-900 sm:text-3xl">
             {service.title}
           </h1>
-          <p className="mt-3 text-gray-700 text-base md:text-lg leading-relaxed">
+
+          <p className="mt-3 text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
             {service.description}
           </p>
+
+          <div className="mt-5 border-t border-gray-200 pt-4">
+            <p className="text-sm font-medium text-gray-900">Need a repair?</p>
+            <p className="mt-1 text-sm leading-6 text-gray-600">
+              Visit our shop in Gaya to discuss the repair and available parts.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Parts Section */}
+      {/* Available parts */}
       <section>
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl md:text-2xl font-semibold text-blue-600">
-            Parts & Accessories
-          </h2>
-          <span className="text-xs text-gray-400 md:hidden italic">
-            Swipe →
-          </span>
+        <div className="mb-4 flex items-end justify-between gap-3 border-b border-gray-200 pb-3">
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900 sm:text-xl">
+              Parts & Accessories
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">
+              Available parts for your luggage
+            </p>
+          </div>
+
+          {service.parts.length > 2 && (
+            <span className="shrink-0 text-xs text-gray-500 sm:hidden">
+              Swipe to view →
+            </span>
+          )}
         </div>
 
-        {/* Mobile: Horizontal Scroll | Desktop: Grid */}
-        <div className="flex overflow-x-auto pb-4 gap-4 snap-x md:grid md:grid-cols-4 md:overflow-visible">
-          {service.parts.map((part) => (
-            <div
-              key={part.name}
-              className="flex-shrink-0 w-[160px] md:w-auto snap-start bg-white rounded-xl p-2 border border-gray-100 shadow-sm md:shadow-none md:border-0"
-            >
-              <div className="relative aspect-square w-full mb-2">
-                <Image
-                  src={part.image}
-                  alt={part.name}
-                  fill
-                  className="rounded-lg object-cover"
-                />
-              </div>
-              <h3 className="text-sm md:text-base font-medium text-gray-900 text-center line-clamp-2">
-                {part.name}
-              </h3>
-            </div>
-          ))}
-        </div>
+        {service.parts.length > 0 ? (
+          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-4 sm:overflow-visible sm:px-0 md:grid-cols-4 lg:grid-cols-5">
+            {service.parts.map((part) => (
+              <article
+                key={part.name}
+                className="w-[148px] shrink-0 snap-start sm:w-auto"
+              >
+                <div className="relative aspect-square w-full overflow-hidden bg-gray-100">
+                  <Image
+                    src={part.image}
+                    alt={part.name}
+                    fill
+                    sizes="(max-width: 639px) 148px, (max-width: 1023px) 33vw, 20vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="pt-2">
+                  <h3 className="line-clamp-2 text-sm font-medium leading-5 text-gray-900">
+                    {part.name}
+                  </h3>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p className="py-6 text-sm text-gray-500">
+            Please contact us for information about available parts.
+          </p>
+        )}
       </section>
     </main>
   );
