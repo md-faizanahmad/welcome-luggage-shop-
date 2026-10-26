@@ -4,12 +4,12 @@ const products = [
   {
     id: 1,
     name: "Bag & Luggage Repair",
-    image: "/catlogs/Products_Ones.png",
+    image: "/catlogs/Products_One.png",
   },
   {
     id: 2,
     name: "Zipper Replacement & Repair",
-    image: "/catlogs/Products_Twos.png",
+    image: "/catlogs/Products_Two.png",
   },
   {
     id: 3,

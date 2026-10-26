@@ -113,7 +113,7 @@ export default function StatsCounter() {
 
         {/* Infinite Stats Marquee */}
         <div
-          className="group relative overflow-hidden"
+          className="group relative cursor-pointer overflow-hidden"
           aria-label="Business statistics"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}

@@ -4,9 +4,9 @@ import {
   ShieldCheck,
   MapPin,
   Award,
-  Star,
   Users,
   Wrench,
+  ArrowUpRight,
 } from "lucide-react";
 import ShopImg from "@/assets/shop.jpg";
 import type { Metadata } from "next";
@@ -50,197 +50,184 @@ export const metadata: Metadata = {
   },
 };
 
+const services = [
+  {
+    icon: Wrench,
+    title: "Bag & Trolley Repair",
+    description: "Zip, handle, wheel aur silai ki marammat.",
+    iconClass: "text-brand-navy",
+  },
+  {
+    icon: Users,
+    title: "Experienced Workers",
+    description: "Kaam karne wali experienced team.",
+    iconClass: "text-red-700",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Repair Guidance",
+    description: "Problem ke hisaab se repair options.",
+    iconClass: "text-brand-green-dark",
+  },
+  {
+    icon: Award,
+    title: "Personal Attention",
+    description: "Har bag ki problem par dhyan.",
+    iconClass: "text-amber-500",
+  },
+];
+
 export default function AboutSection() {
   return (
     <article
-      className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+      className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12"
       aria-labelledby="story-title"
     >
       <h1 id="story-title" className="sr-only">
         About Welcome Luggage & Repairing Center in Gaya, Bihar
       </h1>
 
-      <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-12">
-        {/* Owner and Shop Images */}
-        <div className="flex min-w-0 flex-col gap-5 sm:gap-6 lg:col-span-5">
-          <div className="group relative">
-            <figure className="relative z-10 aspect-[4/4] overflow-hidden lg:rounded-2xl lg:border-9  border-4 border-white shadow-xl sm:aspect-[4/5] ">
+      <div className="grid grid-cols-1 items-start gap-7 md:grid-cols-12 md:items-center md:gap-8 lg:gap-12">
+        {/* Owner profile */}
+        <div className="mx-auto w-full max-w-md md:col-span-5 md:max-w-none">
+          <figure className="relative">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100 sm:aspect-[5/4] md:aspect-[4/5]">
               <Image
                 src="/owner_img.jpeg"
                 alt="Md Mushtaque Ahmad, owner of Welcome Luggage & Repairing Center in Gaya"
                 fill
-                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 80vw, 42vw"
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 priority
+                sizes="(max-width: 767px) 100vw, (max-width: 1023px) 42vw, 400px"
+                className="object-cover object-center"
               />
 
-              <figcaption className="absolute inset-x-0 bottom-0 bg-brand-navy/75 p-4 text-white backdrop-blur-md sm:p-5">
-                <p className="text-xs font-bold uppercase tracking-widest text-brand-green-light">
-                  Shop Owner
+              {/* Compact owner label */}
+              <figcaption className="absolute inset-x-0 bottom-0 bg-brand-navy/85 px-3 py-3 text-white sm:px-4">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-brand-green-light sm:text-xs">
+                  Founder & Owner
                 </p>
 
-                <p className="mt-1 text-lg font-extrabold sm:text-xl">
+                <p className="mt-0.5 text-base font-extrabold sm:text-lg">
                   Md Mushtaque Ahmad
                 </p>
 
-                <p className="mt-1 text-xs text-white/85 sm:text-sm">
+                <p className="mt-0.5 text-[11px] text-white/80 sm:text-xs">
                   Welcome Luggage & Repairing Center
                 </p>
               </figcaption>
-            </figure>
+            </div>
 
-            {/* Shop theme decoration */}
-            <div className="absolute -bottom-3 -right-3 -z-0 hidden h-2/3 w-2/3 rounded-[2.5rem] bg-brand-green lg:block" />
-          </div>
-
-          <figure className="relative z-20 aspect-[16/10] w-full overflow-hidden  shadow-lg ring-1 ring-border sm:aspect-video sm:rounded-[2rem] lg:-mt-10 lg:ml-auto lg:w-4/5">
-            <Image
-              src={ShopImg}
-              alt="Welcome Luggage & Repairing Center shop and workshop on G.B. Road, Gaya"
-              fill
-              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 80vw, 34vw"
-              className="object-cover"
-            />
+            {/* Small shop photo: desktop only */}
+            <div className="absolute -bottom-0 -right-0 hidden w-32 overflow-hidden  shadow-md lg:block xl:w-36">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src={ShopImg}
+                  alt="Welcome Luggage & Repairing Center shop on G.B. Road, Gaya"
+                  fill
+                  sizes="144px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </figure>
         </div>
 
-        {/* About the Business */}
-        <div className="min-w-0 space-y-6 sm:space-y-8 lg:col-span-7">
-          <header className="space-y-3 sm:space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-lg bg-brand-green-light px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-brand-green-dark sm:text-sm">
-              <History size={16} aria-hidden="true" />
+        {/* Business information */}
+        <div className="min-w-0 md:col-span-7">
+          <header className="mb-4 space-y-2 sm:mb-5">
+            <div className="inline-flex items-center gap-1.5 rounded-md bg-brand-green-light px-2.5 py-1.5 text-[10px] font-extrabold uppercase tracking-wider text-brand-green-dark sm:text-xs">
+              <History size={14} aria-hidden="true" />
               Purana experience, bharosemand kaam
             </div>
 
-            <h2 className="text-3xl font-black leading-tight tracking-tight text-brand-navy sm:text-4xl md:text-5xl lg:text-6xl">
-              Aapke bag ki marammat,
-              <span className="block text-brand-red">bharose ke saath.</span>
+            <h2 className="max-w-xl text-2xl font-black leading-tight tracking-tight text-brand-navy sm:text-3xl lg:text-4xl">
+              Aapke bag ki marammat,{" "}
+              <span className="text-brand-red">bharose ke saath.</span>
             </h2>
           </header>
 
-          <div className="space-y-4 border-l-2 border-brand-green pl-4 text-sm leading-7 text-text-muted sm:space-y-5 sm:pl-6 sm:text-base sm:leading-8">
+          {/* Short, readable introduction */}
+          <div className="max-w-2xl space-y-3 text-sm leading-6 text-text-muted sm:text-base sm:leading-7">
             <p>
               <strong className="font-bold text-brand-navy">
                 Welcome Luggage & Repairing Center
               </strong>{" "}
-              Gaya, Bihar mein luggage aur bag repair ki services dene wala ek
-              local shop hai. Yahan hamara focus hai aapke bag ki problem
-              samajhna aur uske hisaab se marammat karna.
+              Gaya, Bihar ka ek local shop hai, jahan luggage aur trolley bag ki
+              marammat ki jaati hai.
             </p>
 
             <p>
-              Is shop ke owner{" "}
-              <strong className="font-bold text-brand-navy">
-                Md Mushtaque Ahmad
-              </strong>{" "}
-              hain. Unke saath hamare experienced workers luggage repair aur
-              silai ke kaam ko dhyan se karte hain. Hamara maqsad hai ki
-              customer ko apne bag ki marammat ke liye sahi guidance aur
-              bharosemand service mile.
-            </p>
-
-            <p>
-              Trolley bag ki zip kharab ho, handle toot gaya ho, wheel ghis gaya
-              ho ya bag ki silai khul gayi ho — aap apna bag hamare paas la
-              sakte hain. Hum problem check karke repair ke options batate hain,
-              taaki aap apni zaroorat ke hisaab se faisla kar sakein.
+              Owner{" "}
+              <strong className="text-brand-navy">Md Mushtaque Ahmad</strong>{" "}
+              aur unki team zip, handle, wheel aur bag ki silai jaisi problems
+              check karke suitable repair options batate hain.
             </p>
           </div>
 
-          {/* Service Highlights */}
-          <div className="grid grid-cols-1 gap-3 pt-1 sm:grid-cols-2 sm:gap-4">
-            <div className="flex items-center gap-3  p-3  transition-colors  sm:gap-4 sm:p-4">
-              <div className="shrink-0  p-3 text-brand-green-dark">
-                <Wrench size={22} aria-hidden="true" />
-              </div>
+          {/* Service highlights */}
+          <div className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-6 sm:gap-3">
+            {services.map((service) => {
+              const Icon = service.icon;
 
-              <div>
-                <h3 className="text-sm font-extrabold text-brand-navy sm:text-base">
-                  Bag & Trolley Repair
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-text-muted sm:text-sm">
-                  Zip, handle, wheel aur silai ki marammat.
-                </p>
-              </div>
-            </div>
+              return (
+                <div
+                  key={service.title}
+                  className="flex min-w-0 items-start gap-2.5  p-3 sm:gap-3 sm:p-3.5"
+                >
+                  <div className={`mt-3 shrink-0 ${service.iconClass}`}>
+                    <Icon size={19} strokeWidth={2} aria-hidden="true" />
+                  </div>
 
-            <div className="flex items-center gap-3  p-3  transition-colors  sm:gap-4 sm:p-4">
-              <div className="shrink-0  p-3 text-brand-green-dark">
-                <Users size={22} aria-hidden="true" />
-              </div>
+                  <div className="min-w-0">
+                    <h3 className="text-xs font-extrabold leading-5 text-brand-navy sm:text-sm">
+                      {service.title}
+                    </h3>
 
-              <div>
-                <h3 className="text-sm font-extrabold text-brand-navy sm:text-base">
-                  Experienced Workers
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-text-muted sm:text-sm">
-                  Kaam ko dhyan se karne wali team.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3  p-3  transition-colors  sm:gap-4 sm:p-4">
-              <div className="shrink-0  p-3 text-brand-green-dark">
-                <ShieldCheck size={22} aria-hidden="true" />
-              </div>
-
-              <div>
-                <h3 className="text-sm font-extrabold text-brand-navy sm:text-base">
-                  Repair Options
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-text-muted sm:text-sm">
-                  Problem check karke suitable repair ki salah.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3  p-3  transition-colors  sm:gap-4 sm:p-4">
-              <div className="shrink-0  p-3 text-brand-red">
-                <Award size={22} aria-hidden="true" />
-              </div>
-
-              <div>
-                <h3 className="text-sm font-extrabold text-brand-navy sm:text-base">
-                  Personal Attention
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-text-muted sm:text-sm">
-                  Har bag ki problem ko samajhkar kaam.
-                </p>
-              </div>
-            </div>
+                    <p className="mt-0.5 text-[11px] leading-4 text-text-muted sm:text-xs sm:leading-5">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          {/* Local SEO and Location */}
-          <footer className="flex flex-col gap-4 border-t border-border pt-5 sm:pt-6">
-            <address className="flex items-start gap-3 text-sm font-medium not-italic leading-6 text-text-muted sm:text-base">
+          {/* Location and business reassurance */}
+          <footer className="mt-5 flex flex-col gap-3 border-t border-border pt-4 sm:mt-6 sm:flex-row sm:items-center sm:justify-between">
+            <address className="flex min-w-0 items-start gap-2 text-xs not-italic leading-5 text-text-muted sm:text-sm">
               <MapPin
-                size={20}
+                size={17}
                 className="mt-0.5 shrink-0 text-brand-red"
                 aria-hidden="true"
               />
 
               <span>
-                <strong className="text-brand-navy">
-                  Welcome Luggage & Repairing Center
-                </strong>
-                <br />
-                G.B. Road, Sony Optical ke saamne, Gaya, Bihar
+                <a
+                  href="https://www.google.com/maps/place/Welcome+Luggage+%26+Repairing+Center/@24.7970761,85.0061303,707m/data=!3m1!1e3!4m14!1m7!3m6!1s0x39f32b30ac38c101:0xe819c1eb6ae9ec9a!2sWelcome+Luggage+%26+Repairing+Center!8m2!3d24.7960991!4d85.0084257!16s%2Fg%2F11tmz80tj7!3m5!1s0x39f32b30ac38c101:0xe819c1eb6ae9ec9a!8m2!3d24.7960991!4d85.0084257!16s%2Fg%2F11tmz80tj7?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Find Welcome Luggage and Repairing Center on Google Maps"
+                  className="group inline-flex flex-col"
+                >
+                  <strong className="inline-flex items-center gap-1 font-bold text-brand-navy transition-colors group-hover:text-brand-red">
+                    Visit Our Shop
+                    <ArrowUpRight
+                      size={14}
+                      className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      aria-hidden="true"
+                    />
+                  </strong>
+
+                  <span className="mt-0.5 transition-colors group-hover:text-brand-red">
+                    G.B. Road, Sony Optical ke saamne, Gaya, Bihar
+                  </span>
+                </a>
               </span>
             </address>
 
-            <div className="flex items-center gap-1.5 text-amber-500">
-              {Array.from({ length: 5 }, (_, index) => (
-                <Star
-                  key={index}
-                  size={16}
-                  fill="currentColor"
-                  aria-hidden="true"
-                />
-              ))}
-
-              <span className="ml-2 text-xs font-bold text-text-muted sm:text-sm">
-                Aapka bharosa, hamari zimmedari
-              </span>
+            <div className="inline-flex items-center gap-1.5 self-start text-xs font-bold text-brand-green-dark sm:self-center sm:whitespace-nowrap">
+              <ShieldCheck size={16} aria-hidden="true" />
+              Aapka bharosa, hamari zimmedari
             </div>
           </footer>
         </div>
