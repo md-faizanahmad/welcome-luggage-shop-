@@ -1,35 +1,25 @@
 "use client";
 
 import CountUp from "react-countup";
-import { motion, useReducedMotion } from "framer-motion";
-import { CalendarHeart, Users2, Verified } from "lucide-react";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+  useReducedMotion,
+} from "framer-motion";
+import { useRef, useState } from "react";
+import { getBusinessStats } from "@/lib/businessStats";
 
-const stats = [
-  {
-    label: "Customers Served",
-    value: 100000,
-    suffix: "+",
-    icon: Users2,
-  },
-  {
-    label: "Years of Experience",
-    value: 15,
-    suffix: "+",
-    icon: CalendarHeart,
-  },
-  {
-    label: "Parts Supplied",
-    value: 50000,
-    suffix: "+",
-    icon: Verified,
-  },
-];
+const stats = getBusinessStats();
 
-const StatItem = ({ item }: { item: (typeof stats)[number] }) => {
+type StatItemType = (typeof stats)[number];
+
+function StatItem({ item }: { item: StatItemType }) {
   const Icon = item.icon;
+  const numericValue = typeof item.value === "number" ? item.value : undefined;
 
   return (
-    <div className="flex min-w-[190px] items-center gap-3  px-4 py-3 sm:min-w-[220px] sm:gap-4 sm:px-5 sm:py-4">
+    <div className="flex min-w-[190px] items-center gap-3 px-4 py-3 sm:min-w-[220px] sm:gap-4 sm:px-5 sm:py-4">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center text-brand-red sm:h-12 sm:w-12 sm:rounded-xl">
         <Icon size={20} strokeWidth={2} className="sm:hidden" />
         <Icon size={23} strokeWidth={2} className="hidden sm:block" />
@@ -37,26 +27,72 @@ const StatItem = ({ item }: { item: (typeof stats)[number] }) => {
 
       <div className="min-w-0">
         <p className="whitespace-nowrap text-xl font-black leading-tight tracking-tight text-brand-navy sm:text-2xl">
-          <CountUp
-            end={item.value}
-            duration={2.5}
-            separator=","
-            enableScrollSpy
-            scrollSpyOnce
-          />
-          <span className="ml-0.5 text-brand-red">{item.suffix}</span>
+          {numericValue !== undefined ? (
+            <CountUp
+              end={numericValue}
+              duration={2.5}
+              separator=","
+              enableScrollSpy
+              scrollSpyOnce
+            />
+          ) : (
+            item.value
+          )}
+
+          {item.suffix && (
+            <span className="ml-0.5 text-brand-red">{item.suffix}</span>
+          )}
         </p>
 
-        <p className="mt-1 text-[10px] font-bold leading-tight text-text-muted sm:text-xs">
+        <p className="mt-1 whitespace-nowrap text-[10px] font-bold leading-tight text-text-muted sm:text-xs">
           {item.label}
         </p>
       </div>
     </div>
   );
-};
+}
+
+function StatGroup({ duplicate = false }: { duplicate?: boolean }) {
+  return (
+    <div
+      className="flex shrink-0 items-center gap-3 pr-3 sm:gap-4 sm:pr-4"
+      aria-hidden={duplicate}
+    >
+      {stats.map((item) => (
+        <div key={item.label}>
+          <StatItem item={item} />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function StatsCounter() {
   const shouldReduceMotion = useReducedMotion();
+  const [isPaused, setIsPaused] = useState(false);
+
+  const trackRef = useRef<HTMLDivElement>(null);
+  const groupRef = useRef<HTMLDivElement>(null);
+
+  const x = useMotionValue(0);
+  const positionRef = useRef(0);
+
+  useAnimationFrame((_, delta) => {
+    if (shouldReduceMotion || isPaused) return;
+
+    const groupWidth = groupRef.current?.getBoundingClientRect().width;
+
+    if (!groupWidth) return;
+
+    const speed = 45; // Pixels per second
+    positionRef.current -= (speed * delta) / 1000;
+
+    if (positionRef.current <= -groupWidth) {
+      positionRef.current += groupWidth;
+    }
+
+    x.set(positionRef.current);
+  });
 
   return (
     <section
@@ -71,47 +107,38 @@ export default function StatsCounter() {
           </p>
 
           <h2 className="mt-1 text-xl font-black tracking-tight text-brand-navy sm:text-2xl md:text-3xl">
-            Experienced jo bharosa dilaye
+            Experience jo bharosa dilaye
           </h2>
         </div>
 
-        {/* Stats Marquee */}
+        {/* Infinite Stats Marquee */}
         <div
           className="group relative overflow-hidden"
           aria-label="Business statistics"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
         >
-          {/* Edge fade */}
+          {/* Edge Fade */}
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-5 bg-gradient-to-r from-white to-transparent sm:w-10" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-5 bg-gradient-to-l from-white to-transparent sm:w-10" />
 
-          <motion.div
-            className="flex w-max gap-3 py-2 sm:gap-4"
-            animate={shouldReduceMotion ? undefined : { x: ["0%", "-50%"] }}
-            transition={
-              shouldReduceMotion
-                ? undefined
-                : {
-                    x: {
-                      duration: 30,
-                      ease: "linear",
-                      repeat: Infinity,
-                    },
-                  }
-            }
-            whileHover={
-              shouldReduceMotion ? undefined : { animationPlayState: "paused" }
-            }
-          >
-            {/* Duplicate items for a seamless loop */}
-            {[...stats, ...stats].map((item, index) => (
-              <div
-                key={`${item.label}-${index}`}
-                aria-hidden={index >= stats.length}
-              >
-                <StatItem item={item} />
+          <div ref={trackRef} className="overflow-hidden">
+            <motion.div
+              className="flex w-max"
+              style={{
+                x,
+                willChange: shouldReduceMotion ? "auto" : "transform",
+              }}
+            >
+              <div ref={groupRef}>
+                <StatGroup />
               </div>
-            ))}
-          </motion.div>
+
+              <StatGroup duplicate />
+            </motion.div>
+          </div>
         </div>
 
         <p className="mt-2 text-center text-[10px] leading-relaxed text-text-muted sm:text-xs">
