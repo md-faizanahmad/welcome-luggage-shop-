@@ -81,7 +81,7 @@ export function getBusinessStats() {
     },
     {
       label: "Google Rating",
-      value: 4.6,
+      value: "4.6",
       suffix: "/5",
       icon: Star,
     },
