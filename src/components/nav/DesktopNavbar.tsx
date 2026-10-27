@@ -29,10 +29,22 @@ const NAV_LINKS: NavItem[] = [
     name: "Services",
     href: "/services",
     dropdown: [
-      { name: "Luggage Repair", href: "/services/repairing-of-luggage" },
-      { name: "Wholesale Parts", href: "/services/wholesale-parts" },
-      { name: "Custom Covers", href: "/services/custom-covers" },
-      { name: "Dress Alterations", href: "/services/dress-alterations" },
+      {
+        name: "Luggage & Trolley Bag Repair",
+        href: "/services/luggage-repair",
+      },
+      {
+        name: "Wholesale Luggage Parts",
+        href: "/services/wholesale-luggage-parts",
+      },
+      {
+        name: "Custom Luggage & Bag Covers",
+        href: "/services/custom-luggage-bag-covers",
+      },
+      {
+        name: "Clothing Alterations",
+        href: "/services/clothing-alteration",
+      },
     ],
   },
   { name: "Support", href: "/support" },

@@ -14,10 +14,22 @@ import {
 } from "lucide-react";
 
 const SERVICE_LINKS = [
-  { label: "Luggage Repair", href: "/services/repairing-of-luggage" },
-  { label: "Wholesale Parts", href: "/services/wholesale-parts" },
-  { label: "Custom Covers", href: "/services/custom-covers" },
-  { label: "Dress Alterations", href: "/services/dress-alterations" },
+  {
+    name: "Luggage & Trolley Bag Repair",
+    href: "/services/luggage-repair",
+  },
+  {
+    name: "Wholesale Luggage Parts",
+    href: "/services/wholesale-luggage-parts",
+  },
+  {
+    name: "Custom Luggage & Bag Covers",
+    href: "/services/custom-luggage-bag-covers",
+  },
+  {
+    name: "Clothing Alterations",
+    href: "/services/clothing-alteration",
+  },
 ];
 
 const NAV_ITEMS = [
@@ -102,7 +114,7 @@ export default function MobileBottomNav() {
                       : "text-foreground hover:bg-background-secondary"
                   }`}
                 >
-                  <span>{service.label}</span>
+                  <span>{service.name}</span>
                   <span className="text-lg leading-none" aria-hidden="true">
                     ›
                   </span>
