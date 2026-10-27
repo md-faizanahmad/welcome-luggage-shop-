@@ -2,7 +2,7 @@ import HomePages from "@/components/home/HomePages";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://welcomeluggagerepair.shop"),
+  metadataBase: new URL("https://welcomerepair.vercel.app"),
 
   title: "Luggage Repair in Gaya | Trolley Bag & Suitcase Repair Shop",
   description:
