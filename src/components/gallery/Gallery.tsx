@@ -62,7 +62,7 @@ export default function GalleryPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-white text-gray-900">
       {/* Page heading */}
-      <section className="px-5 pb-7 pt-24 sm:px-6 sm:pt-10 md:pb-9">
+      <section className="px-5 pb-7 pt-8 sm:px-6 sm:pt-10 md:pb-9">
         <div className="mx-auto max-w-7xl border-l-[3px] border-black pl-4 sm:pl-5">
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-gray-500">
             Our Work
@@ -172,29 +172,6 @@ export default function GalleryPage() {
       </section>
 
       {/* Simple workshop footer strip */}
-      <section className="bg-black px-5 py-5 text-white sm:px-6">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-3">
-          <span className="text-xs font-medium text-white/70">
-            Quality Materials
-          </span>
-
-          <span className="text-xs font-medium text-white/70">
-            Skilled Repairs
-          </span>
-
-          <a
-            href="https://wa.me/919430965836"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-10 items-center text-xs font-semibold text-blue-400 transition-colors hover:text-blue-300  focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
-          >
-            Enquire About a Repair{" "}
-            <span className="ml-1" aria-hidden="true">
-              →
-            </span>
-          </a>
-        </div>
-      </section>
     </main>
   );
 }
