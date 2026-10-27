@@ -34,8 +34,8 @@ export default function Hero() {
           />
         </video>
 
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-brand-navy/65" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-brand-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/50 to-brand-navy/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/20 via-transparent to-brand-navy/10" />
       </div>
 
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-5 py-12 sm:px-8 md:py-14 lg:grid-cols-2 lg:gap-12 lg:px-10 lg:py-10">

@@ -186,7 +186,7 @@ export default function GalleryPage() {
             href="https://wa.me/919430965836"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-10 items-center text-xs font-semibold text-blue-400 transition-colors hover:text-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
+            className="inline-flex min-h-10 items-center text-xs font-semibold text-blue-400 transition-colors hover:text-blue-300  focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
           >
             Enquire About a Repair{" "}
             <span className="ml-1" aria-hidden="true">
