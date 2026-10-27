@@ -3,7 +3,7 @@ import Image from "next/image";
 
 interface Part {
   name: string;
-  price: string;
+
   image: string;
 }
 
