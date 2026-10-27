@@ -8,33 +8,24 @@ export const services = [
     parts: [
       {
         name: "Trolley Wheel Replacement",
-        price: "₹150",
-        image: "/images/wheels.webp",
+        image: "/catlogs/Products_Seven.png",
       },
       {
         name: "Handle Replacement",
-        price: "₹200",
-        image: "/images/handles.webp",
+        image: "/catlogs/Products_Four.png",
       },
       {
         name: "Zipper Repair & Replacement",
-        price: "₹150",
-        image: "/images/zipper.webp",
+        image: "/catlogs/Products_Two.png",
       },
       {
         name: "Lock Repair & Replacement",
-        price: "₹150",
         image: "/images/lock.png",
       },
+
       {
-        name: "Trolley Handle Repair",
-        price: "₹200",
-        image: "/images/trolley-handle.webp",
-      },
-      {
-        name: "Luggage Body Repair",
-        price: "₹250",
-        image: "/images/luggage-body.webp",
+        name: "Luggage Body Cover",
+        image: "/cards_img/cover.png",
       },
     ],
     seo: {
