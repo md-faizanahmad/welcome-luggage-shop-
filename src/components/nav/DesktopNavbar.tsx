@@ -156,7 +156,7 @@ export default function DesktopNavbar() {
                                 key={sub.href}
                                 href={sub.href}
                                 onClick={() => setIsServiceOpen(false)}
-                                className={`flex min-h-11 items-center border-l-2 px-4 py-2.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-brand-red ${
+                                className={`flex min-h-11 items-center border-l-2 px-4 py-2.5 text-sm transition-colors  focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-brand-red ${
                                   active
                                     ? "border-brand-red bg-gray-50 font-semibold text-gray-900"
                                     : "border-transparent text-gray-600 hover:border-gray-400 hover:bg-gray-50 hover:text-gray-900"
