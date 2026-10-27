@@ -40,13 +40,19 @@ const NAV_LINKS: NavItem[] = [
 
 export default function DesktopNavbar() {
   const pathname = usePathname();
+
   const [scrolled, setScrolled] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
+
     handleScroll();
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -54,53 +60,59 @@ export default function DesktopNavbar() {
     setIsServiceOpen(false);
   }, [pathname]);
 
-  const isActive = (href: string) => pathname === href;
+  useEffect(() => {
+    if (!isServiceOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsServiceOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isServiceOpen]);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href;
+
   const isParentActive = (item: NavItem) =>
     item.dropdown?.some((sub) => pathname === sub.href) ?? false;
 
   return (
     <>
-      {/* Desktop Navbar */}
       <nav
-        className={`fixed inset-x-0 top-0 z-[100] hidden transition-all duration-300 md:block ${
-          scrolled ? "bg-white py-2 shadow-md" : "bg-white/65 py-2"
+        aria-label="Main navigation"
+        className={`fixed inset-x-0 top-0 z-[100] hidden border-b transition-colors duration-200 md:block ${
+          scrolled ? "border-gray-200 bg-white" : "border-transparent bg-white"
         }`}
       >
-        <div
-          className={`mx-auto px-4 transition-all duration-500 ${
-            scrolled ? "max-w-6xl" : "max-w-7xl"
-          }`}
-        >
-          <div
-            className={`relative flex h-16 items-center justify-between rounded-sm px-6 transition-all duration-500 ${
-              scrolled
-                ? "border border-border bg-white shadow-sm"
-                : "border border-transparent bg-transparent"
-            }`}
-          >
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex h-[76px] items-center justify-between gap-8">
             {/* Logo */}
             <Link
               href="/"
               aria-label="Welcome Luggage & Repairing Center home"
-              className="z-50 shrink-0"
+              className="shrink-0"
             >
               <Image
                 src={Logo}
                 alt="Welcome Luggage & Repairing Center"
-                width={50}
-                height={50}
+                width={48}
+                height={48}
                 priority
-                className="transition-transform hover:scale-105"
+                className="h-11 w-11 object-contain"
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="flex items-center space-x-1">
+            {/* Navigation links */}
+            <div className="flex h-full items-center gap-1 lg:gap-3">
               {NAV_LINKS.map((item) =>
                 item.dropdown ? (
                   <div
                     key={item.name}
-                    className="relative px-4 py-2"
+                    className="relative flex h-full items-center"
                     onMouseEnter={() => setIsServiceOpen(true)}
                     onMouseLeave={() => setIsServiceOpen(false)}
                   >
@@ -109,17 +121,19 @@ export default function DesktopNavbar() {
                       aria-expanded={isServiceOpen}
                       aria-haspopup="true"
                       onClick={() => setIsServiceOpen((open) => !open)}
-                      className={`flex items-center text-sm font-bold uppercase tracking-widest transition-colors ${
-                        isParentActive(item)
+                      onFocus={() => setIsServiceOpen(false)}
+                      className={`inline-flex min-h-10 items-center gap-1 px-3 text-[13px] font-semibold transition-colors  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red lg:px-4 ${
+                        isParentActive(item) || isServiceOpen
                           ? "text-brand-red"
-                          : "text-slate-700 hover:text-brand-red"
+                          : "text-gray-700 hover:text-brand-red"
                       }`}
                     >
                       {item.name}
 
                       <ChevronDown
-                        size={14}
-                        className={`ml-1 transition-transform ${
+                        size={15}
+                        strokeWidth={1.8}
+                        className={`transition-transform duration-200 ${
                           isServiceOpen ? "rotate-180" : ""
                         }`}
                       />
@@ -128,46 +142,50 @@ export default function DesktopNavbar() {
                     <AnimatePresence>
                       {isServiceOpen && (
                         <Motion
-                          initial={{ opacity: 0, y: 10 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute left-0 top-full mt-1 w-64 overflow-hidden rounded-2xl border border-border bg-white py-3 shadow-2xl"
+                          initial={{ opacity: 0, y: 5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 5 }}
+                          transition={{ duration: 0.15 }}
+                          className="absolute left-0 top-[calc(100%-1px)] w-60 border-t-2 border-brand-red bg-white py-1 shadow-sm"
                         >
-                          {item.dropdown.map((sub) => (
-                            <Link
-                              key={sub.name}
-                              href={sub.href}
-                              className={`block px-6 py-3 text-sm font-medium transition-colors ${
-                                isActive(sub.href)
-                                  ? "bg-brand-red-light text-brand-red"
-                                  : "text-slate-600 hover:bg-brand-red-light hover:text-brand-red"
-                              }`}
-                            >
-                              {sub.name}
-                            </Link>
-                          ))}
+                          {item.dropdown.map((sub) => {
+                            const active = isActive(sub.href);
+
+                            return (
+                              <Link
+                                key={sub.href}
+                                href={sub.href}
+                                onClick={() => setIsServiceOpen(false)}
+                                className={`flex min-h-11 items-center border-l-2 px-4 py-2.5 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-brand-red ${
+                                  active
+                                    ? "border-brand-red bg-gray-50 font-semibold text-gray-900"
+                                    : "border-transparent text-gray-600 hover:border-gray-400 hover:bg-gray-50 hover:text-gray-900"
+                                }`}
+                              >
+                                {sub.name}
+                              </Link>
+                            );
+                          })}
                         </Motion>
                       )}
                     </AnimatePresence>
                   </div>
                 ) : (
                   <Link
-                    key={item.name}
+                    key={item.href}
                     href={item.href}
-                    className={`group relative px-4 py-2 text-sm font-bold uppercase tracking-widest transition-colors ${
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={`relative inline-flex h-full items-center px-3 text-[13px] font-semibold transition-colors  focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-brand-red lg:px-4 ${
                       isActive(item.href)
-                        ? "text-brand-navy"
-                        : "text-slate-700 hover:text-brand-red"
+                        ? "text-brand-red"
+                        : "text-gray-700 hover:text-brand-red"
                     }`}
                   >
                     {item.name}
 
                     <span
-                      className={`absolute bottom-0 left-4 right-4 h-0.5 origin-left bg-brand-red transition-transform ${
-                        isActive(item.href)
-                          ? "scale-x-100"
-                          : "scale-x-0 group-hover:scale-x-100"
+                      className={`absolute inset-x-3 bottom-0 h-0.5 bg-brand-red transition-transform duration-200 lg:inset-x-4 ${
+                        isActive(item.href) ? "scale-x-100" : "scale-x-0"
                       }`}
                     />
                   </Link>
@@ -178,8 +196,8 @@ export default function DesktopNavbar() {
         </div>
       </nav>
 
-      {/* Navbar Spacer */}
-      <div className="hidden h-20 w-full md:block" />
+      {/* Reserve navbar space */}
+      <div className="hidden h-[76px] md:block" />
     </>
   );
 }
